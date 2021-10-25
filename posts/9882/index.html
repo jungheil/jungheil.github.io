@@ -26,25 +26,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta name="description" content="ubuntu安装cuda和cudnn">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+<meta name="description" content="ubuntu 安装 cuda 和 cudnn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu 安装 cuda 和 cudnn">
 <meta property="og:url" content="https://www.jungh.xyz/posts/9882/index.html">
 <meta property="og:site_name" content="摸鱼怪">
-<meta property="og:description" content="ubuntu安装cuda和cudnn">
+<meta property="og:description" content="ubuntu 安装 cuda 和 cudnn">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.jungh.xyz/posts/9882/ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703223712283.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/9882/ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703224837983.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/9882/ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703231011626.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/9882/ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190704003428733.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/9882/20190703223712283.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/9882/20190703224837983.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/9882/20190703231011626.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/9882/20190704003428733.png">
 <meta property="article:published_time" content="2019-11-25T09:39:17.000Z">
 <meta property="article:modified_time" content="2021-10-25T08:02:43.027Z">
 <meta property="article:author" content="Chris Li">
 <meta property="article:tag" content="cuda">
 <meta property="article:tag" content="安装">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.jungh.xyz/posts/9882/ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703223712283.png">
+<meta name="twitter:image" content="https://www.jungh.xyz/posts/9882/20190703223712283.png">
 
 
 <link rel="canonical" href="https://www.jungh.xyz/posts/9882/">
@@ -324,9 +324,9 @@
 <li>带驱动安装</li>
 </ul>
 <p>  以下为不带驱动安装：  </p>
-<p><img data-src="./ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703223712283.png" alt="img">  </p>
+<p><img data-src="/posts/9882/20190703223712283.png" alt="img">  </p>
 <p>输入 accept </p>
-<p>  <img data-src="./ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703224837983.png" alt="img">  </p>
+<p>  <img data-src="/posts/9882/20190703224837983.png" alt="img">  </p>
 <p>不选择 Driver</p>
 <p><strong>3. 设置 cuda 环境变量</strong></p>
 <p>   <code>sudo gedit ~/.bashrc</code></p>
@@ -337,7 +337,7 @@
 <p>   <code>source ~/.bashrc</code></p>
 <p><strong>4. 检查是否安装成功</strong></p>
 <p>   <code>nvcc --version</code></p>
-<p>   <img data-src="./ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190703231011626.png" alt="img"></p>
+<p>   <img data-src="/posts/9882/20190703231011626.png" alt="img"></p>
 <hr>
 <h2 id="二、CUDNN"><a href="#二、CUDNN" class="headerlink" title="二、CUDNN"></a>二、CUDNN</h2><ol>
 <li><p>下载 cudnn</p>
@@ -345,7 +345,7 @@
 </li>
 <li><p>安装</p>
 <ul>
-<li>deb 安装<img data-src="./ubuntu%E5%AE%89%E8%A3%85cuda%E5%92%8Ccudnn/20190704003428733.png" alt="img">下载如图三个文件 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-dev_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-doc_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br></pre></td></tr></tbody></table></figure></li>
+<li>deb 安装<img data-src="/posts/9882/20190704003428733.png" alt="img">下载如图三个文件 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-dev_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-doc_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br></pre></td></tr></tbody></table></figure></li>
 <li>tgz 安装解压下载文件终端进入解压出来的文件目录 <figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo cp cuda<span class="regexp">/include/</span>cudnn.h <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude/</span><br><span class="line">sudo cp cuda<span class="regexp">/lib64/</span>libcudnn* <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64/</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude/cudnn.h</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64/libcudnn*</span><br></pre></td></tr></tbody></table></figure>
 
 （拷贝库和同文件并给予权限）</li>
@@ -368,7 +368,7 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/posts/45726/" rel="bookmark">ubuntu安装opencv4</a></div>
+      <div class="popular-posts-title"><a href="/posts/45726/" rel="bookmark">ubuntu 安装 opencv4</a></div>
     </li>
   </ul>
 
@@ -448,7 +448,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -528,7 +528,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d031924ea0be4a3ac475fcf3efb81d84"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d031924ea0be4a3ac475fcf3efb81d84"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

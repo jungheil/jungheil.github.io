@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
 <meta name="description" content="1. 概述简单地说，每一个含有虚函数（无论是其本身的，还是继承而来的）的类都至少有一个与之对应的虚函数表，其中存放着该类所有的虚函数对应的函数指针。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C&#x2F;C++ 虚函数实现的基本原理">
@@ -34,18 +34,18 @@
 <meta property="og:site_name" content="摸鱼怪">
 <meta property="og:description" content="1. 概述简单地说，每一个含有虚函数（无论是其本身的，还是继承而来的）的类都至少有一个与之对应的虚函数表，其中存放着该类所有的虚函数对应的函数指针。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723701.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723702.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723703.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723704.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723705.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/46122/190103092723701.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/46122/190103092723702.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/46122/190103092723703.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/46122/190103092723704.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/46122/190103092723705.png">
 <meta property="article:published_time" content="2019-11-25T11:30:43.000Z">
 <meta property="article:modified_time" content="2021-10-25T07:53:58.895Z">
 <meta property="article:author" content="Chris Li">
 <meta property="article:tag" content="c++">
 <meta property="article:tag" content="虚函数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.jungh.xyz/posts/46122/C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723701.png">
+<meta name="twitter:image" content="https://www.jungh.xyz/posts/46122/190103092723701.png">
 
 
 <link rel="canonical" href="https://www.jungh.xyz/posts/46122/">
@@ -313,16 +313,16 @@
         <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>简单地说，每一个含有虚函数（无论是其本身的，还是继承而来的）的类都至少有一个与之对应的虚函数表，其中存放着该类所有的虚函数对应的函数指针。</p>
 <span id="more"></span>
 
-<p>例：<br><img data-src="C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723701.png" alt="img"></p>
+<p>例：<br><img data-src="/posts/46122/190103092723701.png" alt="img"></p>
 <p>其中：</p>
 <ul>
 <li>B 的虚函数表中存放着 B::foo 和 B::bar 两个函数指针。</li>
 <li>D 的虚函数表中存放的既有继承自 B 的虚函数 B::foo，又有重写（override）了基类虚函数 B::bar 的 D::bar，还有新增的虚函数 D::quz。</li>
 </ul>
 <p><em>提示：为了描述方便，本文在探讨对象内存布局时，将忽略内存对齐对布局的影响。</em></p>
-<h2 id="2-虚函数表构造过程"><a href="#2-虚函数表构造过程" class="headerlink" title="2. 虚函数表构造过程"></a>2. 虚函数表构造过程</h2><p>从编译器的角度来说，B 的虚函数表很好构造，D 的虚函数表构造过程相对复杂。下面给出了构造 D 的虚函数表的一种方式（仅供参考）：<br><img data-src="C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723702.png" alt="img"></p>
+<h2 id="2-虚函数表构造过程"><a href="#2-虚函数表构造过程" class="headerlink" title="2. 虚函数表构造过程"></a>2. 虚函数表构造过程</h2><p>从编译器的角度来说，B 的虚函数表很好构造，D 的虚函数表构造过程相对复杂。下面给出了构造 D 的虚函数表的一种方式（仅供参考）：<br><img data-src="/posts/46122/190103092723702.png" alt="img"></p>
 <p><em>提示：该过程是由编译器完成的，因此也可以说：虚函数替换过程发生在编译时。</em></p>
-<h2 id="3-虚函数调用过程"><a href="#3-虚函数调用过程" class="headerlink" title="3. 虚函数调用过程"></a>3. 虚函数调用过程</h2><p>以下面的程序为例：<br><img data-src="C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723703.png" alt="img"></p>
+<h2 id="3-虚函数调用过程"><a href="#3-虚函数调用过程" class="headerlink" title="3. 虚函数调用过程"></a>3. 虚函数调用过程</h2><p>以下面的程序为例：<br><img data-src="/posts/46122/190103092723703.png" alt="img"></p>
 <p>编译器只知道 pb 是 B * 类型的指针，并不知道它指向的具体对象类型 ：pb 可能指向的是 B 的对象，也可能指向的是 D 的对象。</p>
 <p>但对于 “pb-&gt;bar ()”，编译时能够确定的是：此处 operator-&gt; 的另一个参数是 B::bar（因为 pb 是 B * 类型的，编译器认为 bar 是 B::bar），而 B::bar 和 D::bar 在各自虚函数表中的偏移位置是相等的。</p>
 <p>无论 pb 指向哪种类型的对象，只要能够确定被调函数在虚函数中的偏移值，待运行时，能够确定具体类型，并能找到相应 vptr 了，就能找出真正应该调用的函数。</p>
@@ -334,10 +334,10 @@
 <li>如果 pb 指向 D 的对象，可以获取到 D 对象的 vptr，加上偏移值 8（(char*) vptr + 8） ，可以找到 D::bar。</li>
 <li>如果 pb 指向其它类型对象… 同理…</li>
 </ul>
-<h2 id="4-多重继承"><a href="#4-多重继承" class="headerlink" title="4. 多重继承"></a>4. 多重继承</h2><p>当一个类继承多个类，且多个基类都有虚函数时，子类对象中将包含多个虚函数表的指针（即多个 vptr），例：<br><img data-src="C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723704.png" alt="img"></p>
+<h2 id="4-多重继承"><a href="#4-多重继承" class="headerlink" title="4. 多重继承"></a>4. 多重继承</h2><p>当一个类继承多个类，且多个基类都有虚函数时，子类对象中将包含多个虚函数表的指针（即多个 vptr），例：<br><img data-src="/posts/46122/190103092723704.png" alt="img"></p>
 <p>其中：D 自身的虚函数与 B 基类共用了同一个虚函数表，因此也称 B 为 D 的主基类（primary base class）。</p>
 <p>虚函数替换过程与前面描述类似，只是多了一个虚函数表，多了一次拷贝和替换的过程。</p>
-<p>虚函数的调用过程，与前面描述基本类似，区别在于基类指针指向的位置可能不是派生类对象的起始位置，以如下面的程序为例：<br><img data-src="C-C++%E8%99%9A%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/190103092723705.png" alt="img"></p>
+<p>虚函数的调用过程，与前面描述基本类似，区别在于基类指针指向的位置可能不是派生类对象的起始位置，以如下面的程序为例：<br><img data-src="/posts/46122/190103092723705.png" alt="img"></p>
 <h2 id="5-菱形继承"><a href="#5-菱形继承" class="headerlink" title="5. 菱形继承"></a>5. 菱形继承</h2><p>本文不讨论菱形继承的情形，个人觉得：菱形继承的复杂度远大于它的使用价值，这也是 C++ 让人又爱又恨的原因之一。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.linuxidc.com/Linux/2019-01/156152.htm">https://www.linuxidc.com/Linux/2019-01/156152.htm</a></p>
 
@@ -424,7 +424,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">13 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -504,7 +504,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"72b32ec562cf6607757cf1a0a36431a7"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"72b32ec562cf6607757cf1a0a36431a7"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
