@@ -464,7 +464,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-25 15:53:11" itemprop="dateModified" datetime="2021-10-25T15:53:11+08:00">2021-10-25</time>
+        <time title="修改时间：2021-10-25 16:02:43" itemprop="dateModified" datetime="2021-10-25T16:02:43+08:00">2021-10-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -501,55 +501,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h2 id="一、CUDA"><a href="#一、CUDA" class="headerlink" title="一、CUDA"></a>一、CUDA</h2><p><strong>1. 下载 cuda</strong></p>
-<p>   <a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-downloads">cuda 下载地址</a></p>
-<p>   或者直接终端下载：</p>
-   <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">wget</span> http://developer.download.nvidia.com/compute/cuda/<span class="number">10</span>.<span class="number">1</span>/Prod/local_installers/cuda_<span class="number">10</span>.<span class="number">1</span>.<span class="number">243</span>_<span class="number">418</span>.<span class="number">87</span>.<span class="number">00</span>_linux.run</span><br><span class="line"><span class="attribute">sudo</span> sh cuda_<span class="number">10</span>.<span class="number">1</span>.<span class="number">243</span>_<span class="number">418</span>.<span class="number">87</span>.<span class="number">00</span>_linux.run</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>2. 安装</strong></p>
-<p>   cuda8.0 后就集成了 nvidia 显卡驱动，cuda 安装可分为</p>
-<ul>
-<li>不带驱动安装</li>
-<li>带驱动安装</li>
-</ul>
-<p>  以下为不带驱动安装：  </p>
-<p><img data-src="/posts/9882/20190703223712283.png" alt="img">  </p>
-<p>输入 accept </p>
-<p>  <img data-src="/posts/9882/20190703224837983.png" alt="img">  </p>
-<p>不选择 Driver</p>
-<p><strong>3. 设置 cuda 环境变量</strong></p>
-<p>   <code>sudo gedit ~/.bashrc</code></p>
-<p>   在里面添加：</p>
-   <figure class="highlight elixir"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span><span class="symbol">:/usr/local/cuda-</span><span class="number">10.1</span>/lib64</span><br><span class="line">export PATH=<span class="variable">$PATH</span><span class="symbol">:/usr/local/cuda-</span><span class="number">10.1</span>/bin</span><br><span class="line">export CUDA_HOME=<span class="variable">$CUDA_HOME</span><span class="symbol">:/usr/local/cuda-</span><span class="number">10.1</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>   == 目录要根据实际安装版本而定 ==</p>
-<p>   <code>source ~/.bashrc</code></p>
-<p><strong>4. 检查是否安装成功</strong></p>
-<p>   <code>nvcc --version</code></p>
-<p>   <img data-src="/posts/9882/20190703231011626.png" alt="img"></p>
-<hr>
-<h2 id="二、CUDNN"><a href="#二、CUDNN" class="headerlink" title="二、CUDNN"></a>二、CUDNN</h2><ol>
-<li><p>下载 cudnn</p>
-<p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">cudnn 下载地址</a></p>
-</li>
-<li><p>安装</p>
-<ul>
-<li>deb 安装<img data-src="/posts/9882/20190704003428733.png" alt="img">下载如图三个文件 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-dev_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br><span class="line"><span class="attribute">sudo</span> dpkg -i libcudnn<span class="number">7</span>-doc_<span class="number">7.0.3.11</span>-<span class="number">1</span>+cuda<span class="number">9</span>.<span class="number">0</span>_amd<span class="number">64</span>.deb</span><br></pre></td></tr></tbody></table></figure></li>
-<li>tgz 安装解压下载文件终端进入解压出来的文件目录 <figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo cp cuda<span class="regexp">/include/</span>cudnn.h <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude/</span><br><span class="line">sudo cp cuda<span class="regexp">/lib64/</span>libcudnn* <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64/</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/i</span>nclude/cudnn.h</span><br><span class="line">sudo chmod a+r <span class="regexp">/usr/</span>local<span class="regexp">/cuda/</span>lib64/libcudnn*</span><br></pre></td></tr></tbody></table></figure>
-
-（拷贝库和同文件并给予权限）</li>
-</ul>
-</li>
-<li><p>检查安装是否成功</p>
-<p>   <code>cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</code></p>
-</li>
-</ol>
-<hr>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sss_369/article/details/94591280">https://blog.csdn.net/sss_369/article/details/94591280</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sss_369/article/details/94592268">https://blog.csdn.net/sss_369/article/details/94592268</a></p>
-
+          <p>ubuntu 安装 cuda 和 cudnn</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/9882/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -606,7 +566,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-25 15:53:00" itemprop="dateModified" datetime="2021-10-25T15:53:00+08:00">2021-10-25</time>
+        <time title="修改时间：2021-10-25 16:02:32" itemprop="dateModified" datetime="2021-10-25T16:02:32+08:00">2021-10-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -643,103 +603,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h2 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h2><ol>
-<li> 下载 opencv 以及 contrib 库</li>
-</ol>
-<p>   <code>git clone https://github.com/opencv/opencv.git</code></p>
-<p>   <code>git clone https://github.com/opencv/opencv_contrib.git</code></p>
-<ol start="2">
-<li><p>安装依赖项</p>
-<p><code>sudo apt-get install build-essential</code></p>
-<p><code>sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev</code></p>
-<p><code>sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev</code></p>
-</li>
-<li><p>安装 cuda 和 cudnn</p>
-</li>
-<li><p>安装 cmake-gui</p>
-<p><code>sudo apt-get install cmake-qt-gui</code></p>
-</li>
-</ol>
-<h2 id="二、cmake编译安装opencv"><a href="#二、cmake编译安装opencv" class="headerlink" title="二、cmake编译安装opencv"></a>二、cmake 编译安装 opencv</h2><p><strong>1. CMAKE</strong></p>
-<p>打开 cmake-gui</p>
-<p>Where is the source code：填写 opencv 源代码目录</p>
-<p>Where is build the binaries：在 opencv 源代码目录内新建一 build 文件（外部构建）</p>
-<p><img data-src="/posts/45726/2019-11-09%2016-22-35%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png"></p>
-<ul>
-<li><p>点击 configure</p>
-<ul>
-<li><p>设置：</p>
-<p>CMAKE_BUILD_TYPE=Release</p>
-<p>OPENCV_ENABLE_NONFREE=ON</p>
-<p>OPENCV_GENERATE_PKGCONFIG=ON</p>
-</li>
-<li><p>设置 contrib 库</p>
-<p>OPENCV_EXTRA_MODULES_PATH=/home/…/opencv_contrib/modules</p>
-<p>设置到 contrib 库源代码内的 modules 文件夹</p>
-</li>
-<li><p>设置安装目录</p>
-<p> CMAKE_INSTALL_PREFIX=/usr/local/opencv4</p>
-<p>默认路径为 /usr/local</p>
-<p>为安装多版本 opencv 建议自定义一个目录</p>
-</li>
-<li><p>CUDA（选）</p>
-<p>勾选 cuda 选项</p>
-</li>
-<li><p>点击 Generate</p>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>2. 编译安装</strong></p>
-<p>终端进入 build 目录</p>
-<p><code>make -j4</code></p>
-<p>-j4 为四个线程编译</p>
-<p><code>sudo make install</code></p>
-<p>如果安装了 python-dev，这时 Python 应该可以使用 OpenCV 了：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> cv2</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cv2.__version__</span><br><span class="line"><span class="string">'4.0.1'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<p><strong>3. 配置 opencv</strong></p>
-<ul>
-<li><p>让系统在 opencv 安装目录中搜索动态库</p>
-<figure class="highlight stata"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/ld.<span class="keyword">so</span>.<span class="keyword">conf</span>.<span class="keyword">d</span>/</span><br><span class="line">sudo touch opencv4.<span class="keyword">conf</span></span><br><span class="line">sudo <span class="keyword">sh</span> -c 'echo <span class="string">"/usr/local/opencv4/lib"</span> &gt; opencv4.<span class="keyword">conf</span>'</span><br></pre></td></tr></tbody></table></figure>
-
-<p>== 注意：echo “/usr/local/opencv4/lib” 为 opencv 安装目录 ==</p>
-</li>
-</ul>
-<p>​        更新 pkg-config：</p>
-<p>​        <code>sudo ldconfig</code></p>
-<ul>
-<li><p>设置 bash：</p>
-<p><code>sudo gedit /etc/bash.bashrc</code></p>
-<p>在末尾追加：</p>
-<figure class="highlight elixir"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PKG_CONFIG_PATH=<span class="variable">$PKG_CONFIG_PATH</span><span class="symbol">:/usr/local/opencv4/lib/pkgconfig</span>  </span><br><span class="line">export PKG_CONFIG_PATH</span><br></pre></td></tr></tbody></table></figure>
-
-<p>== 注意上面的路径为安装路径！！！==</p>
-<p>保存，执行如下命令使得配置生效：</p>
-<p><code>source /etc/bash.bashrc</code></p>
-<p>查看 opencv 版本：</p>
-<p><code>pkg-config --modversion opencv</code></p>
-</li>
-</ul>
-<p>opencv 安装完成！！</p>
-<h2 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h2><ul>
-<li><p>opencv 测试</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/xfeatures2d.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv::xfeatures2d;         <span class="comment">// 不要忘了导入扩展模块</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line">Mat src_img, gray_img;</span><br><span class="line"><span class="keyword">const</span> string output_name = <span class="string">"SURF特征检测"</span>;</span><br><span class="line"><span class="keyword">int</span> minHessian = <span class="number">100</span>;                <span class="comment">// 定义SURF中的hessian阈值特征点检测算子</span></span><br><span class="line"><span class="keyword">int</span> max_value = <span class="number">500</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SURF_detect_func</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">void</span> *)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="comment">// SURF特征检测</span></span><br><span class="line">	Ptr&lt;SURF&gt; detector = SURF::<span class="built_in">create</span>(minHessian);</span><br><span class="line">	vector&lt;KeyPoint&gt; keypoints;</span><br><span class="line">	detector-&gt;<span class="built_in">detect</span>(gray_img, keypoints, <span class="built_in">Mat</span>());      <span class="comment">// 检测src_img图像中的SURF特征</span></span><br><span class="line">  <span class="comment">// 绘制关键点</span></span><br><span class="line">	Mat keypoint_img;</span><br><span class="line">	dracmakelists:<span class="built_in">wKeypoints</span>(gray_img, keypoints, keypoint_img, Scalar::<span class="built_in">all</span>(<span class="number">-1</span>), DrawMatchesFlags::DEFAULT);  <span class="comment">// Scalar::all(-1)这是一种技巧，就是当用一个负数作为关键点颜色，表示每次随机选取颜色。</span></span><br><span class="line">	<span class="built_in">imshow</span>(output_name, keypoint_img);</span><br><span class="line">}</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	src_img = <span class="built_in">imread</span>(<span class="string">"1.png"</span>);</span><br><span class="line">	<span class="keyword">if</span> (src_img.<span class="built_in">empty</span>())</span><br><span class="line">	{</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"could not load the image...\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="built_in">namedWindow</span>(<span class="string">"原图"</span>, WINDOW_AUTOSIZE);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">"原图"</span>, src_img);</span><br><span class="line">	<span class="built_in">cvtColor</span>(src_img, gray_img, COLOR_BGR2GRAY);</span><br><span class="line">	<span class="built_in">namedWindow</span>(output_name, WINDOW_AUTOSIZE);</span><br><span class="line">	<span class="built_in">createTrackbar</span>(<span class="string">"hessian阈值"</span>, output_name,&amp;minHessian, max_value, SURF_detect_func);</span><br><span class="line">	<span class="built_in">SURF_detect_func</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">	<span class="built_in">waitKey</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>CMakeLists.txt:</p>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 声明要求的 cmake 最低版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>( VERSION <span class="number">2.8</span> )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 声明一个 cmake 工程</span></span><br><span class="line"><span class="keyword">project</span>( opencv_test )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 设置编译模式</span></span><br><span class="line"><span class="keyword">set</span>( CMAKE_BUILD_TYPE <span class="string">"Debug"</span> )</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS   <span class="string">"-std=c++11"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">find_package</span>(OpenCV <span class="number">4.1</span> REQUIRED)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 添加一个可执行程序</span></span><br><span class="line"><span class="comment"># 语法：add_executable( 程序名 源代码文件 ）</span></span><br><span class="line"><span class="keyword">add_executable</span>( <span class="keyword">test</span> surf.cpp )</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 将库文件链接到可执行程序上</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>( <span class="keyword">test</span> <span class="variable">${OpenCV_LIBS}</span> )</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>cuda 测试</p>
-<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core/version.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/cudaarithm.hpp&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    {</span><br><span class="line">        <span class="comment">///　读取图片</span></span><br><span class="line">        cv::Mat src_host = cv::<span class="built_in">imread</span>(<span class="string">"1.jpg"</span>, cv::IMREAD_GRAYSCALE);</span><br><span class="line">        <span class="comment">/// 定义GpuMat</span></span><br><span class="line">        cv::cuda::GpuMat dst, src;</span><br><span class="line">        <span class="comment">/// 将主机内存的图像数据上传到GPU内存</span></span><br><span class="line">        src.<span class="built_in">upload</span>(src_host);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">/// 调用GPU的阈值函数(很多使用GPU加速的函数都和CPU版本的函数相同)</span></span><br><span class="line">        cv::cuda::<span class="built_in">threshold</span>(src, dst, <span class="number">120</span>, <span class="number">255</span>, cv::THRESH_BINARY);</span><br><span class="line"> </span><br><span class="line">        cv::Mat result_host;</span><br><span class="line">        <span class="comment">/// 从GPU上下载阈值化完成的图片</span></span><br><span class="line">        dst.<span class="built_in">download</span>(result_host);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">/// 显示</span></span><br><span class="line">        cv::<span class="built_in">imshow</span>(<span class="string">"Result"</span>, result_host);</span><br><span class="line">        cv::<span class="built_in">waitKey</span>();</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in"><span class="keyword">catch</span></span>(<span class="keyword">const</span> cv::Exception&amp; ex)</span><br><span class="line">    {</span><br><span class="line">        std::cout &lt;&lt; <span class="string">"Error: "</span> &lt;&lt; ex.<span class="built_in">what</span>() &lt;&lt; std::endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>CMakeLists.txt:</p>
-<figure class="highlight cmake"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">project</span>(cuda_test)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">set</span>(CUDA_USE_STATIC_CUDA_RUNTIME <span class="keyword">ON</span>) <span class="comment">#这一句解决 cannot find -lopencv_dep_cudart</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="variable">${CMAKE_SOURCE_DIR}</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">find_package</span>(CUDA REQUIRED)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"CUDA版本: ${CUDA_VERSION}"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"    头文件目录：${CUDA_INCLUDE_DIRS}"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"    库文件列表：${CUDA_LIBRARIES}"</span>)</span><br><span class="line"><span class="keyword">set</span>(CUDA_NVCC_FLAGS -G;-g;-std=c++<span class="number">11</span>) <span class="comment"># nvcc flags</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">${CUDA_INCLUDE_DIRS}</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">set</span>(OpenCV_DIR <span class="string">"/usr/local/share/OpenCV"</span>) <span class="comment"># 指定OpenCV安装路径来区分不同的OpenCV版本</span></span><br><span class="line"><span class="keyword">find_package</span>(OpenCV REQUIRED)</span><br><span class="line"><span class="keyword">set</span>(OpenCV_LIB_DIR <span class="variable">${OpenCV_INSTALL_PATH}</span>/lib)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"OpenCV版本: ${OpenCV_VERSION}"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"    头文件目录：${OpenCV_INCLUDE_DIRS}"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"    库文件目录：${OpenCV_LIB_DIR}"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">"    库文件列表：${OpenCV_LIBS}"</span>)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">${OpenCV_INCLUDE_DIRS}</span>)</span><br><span class="line"><span class="keyword">link_directories</span>(<span class="variable">${OpenCV_LIB_DIR}</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">CUDA_ADD_EXECUTABLE(main main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(main <span class="variable">${OpenCV_LIBS}</span> <span class="variable">${CUDA_LIBRARIES}</span>)</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sss_369/article/details/94755824">https://blog.csdn.net/sss_369/article/details/94755824</a></p>
-
+          <p>ubuntu 安装 opencv4</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/45726/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
