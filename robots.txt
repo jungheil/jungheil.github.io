@@ -1,0 +1,15 @@
+User-agent: * 
+Disallow: /css/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /public/
+Disallow: /images/
+Disallow: /archives/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /CNAME
+Disallow: /README.md
+Disallow: /*?*
+Disallow: / *.js$
+
+Sitemap: https://www.jungh.xyz/sitemap.xml
