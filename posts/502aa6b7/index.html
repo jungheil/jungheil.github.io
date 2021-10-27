@@ -27,25 +27,25 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
-<meta name="description" content="一、什么是 Git？？ git 一个分布式的版本控制系统  gitkraken 一个可视化的 git 管理工具  github 一个 git 的远端仓库（同类的还有 gitlab、gitee 等）">
+<meta name="description" content="一、什么是Git？？  git 一个分布式的版本控制系统 gitkraken 一个可视化的git管理工具 github 一个git的远端仓库（同类的还有gitlab、gitee等）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 入门笔记">
 <meta property="og:url" content="https://www.jungh.xyz/posts/502aa6b7/index.html">
 <meta property="og:site_name" content="摸鱼怪">
-<meta property="og:description" content="一、什么是 Git？？ git 一个分布式的版本控制系统  gitkraken 一个可视化的 git 管理工具  github 一个 git 的远端仓库（同类的还有 gitlab、gitee 等）">
+<meta property="og:description" content="一、什么是Git？？  git 一个分布式的版本控制系统 gitkraken 一个可视化的git管理工具 github 一个git的远端仓库（同类的还有gitlab、gitee等）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/2-2-1.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/1033130145-57a48436a5fcd_articlex.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/4-3-1.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/4-3-2-1581007874185.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/4-3-3.png">
-<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/4-3-4.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/2-2-1.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/1033130145-57a48436a5fcd_articlex.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-1.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-2-1581007874185.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-3.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-4.png">
 <meta property="article:published_time" content="2020-02-07T08:01:22.000Z">
 <meta property="article:modified_time" content="2021-10-25T07:53:51.574Z">
 <meta property="article:author" content="Chris Li">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.jungh.xyz/posts/502aa6b7/2-2-1.png">
+<meta name="twitter:image" content="https://www.jungh.xyz/posts/502aa6b7/Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/2-2-1.png">
 
 
 <link rel="canonical" href="https://www.jungh.xyz/posts/502aa6b7/">
@@ -104,9 +104,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -163,7 +163,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFGit%EF%BC%9F%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、什么是 Git？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BA%86%E8%A7%A3Git"><span class="nav-number">2.</span> <span class="nav-text">二、了解 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%B8%8A%E6%89%8BGit%EF%BC%81"><span class="nav-number">3.</span> <span class="nav-text">三、上手 Git！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%A9%BF%E8%B6%8A%E6%97%B6%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">四、穿越时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">五、分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">六、远端仓库</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AFgit"><span class="nav-number">1.</span> <span class="nav-text">一、什么是 Git？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E4%BA%86%E8%A7%A3git"><span class="nav-number">2.</span> <span class="nav-text">二、了解 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E4%B8%8A%E6%89%8Bgit"><span class="nav-number">3.</span> <span class="nav-text">三、上手 Git！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A9%BF%E8%B6%8A%E6%97%B6%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">四、穿越时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">五、分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">六、远端仓库</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -178,7 +178,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -189,7 +189,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -292,7 +292,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>4.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -310,285 +310,272 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="一、什么是Git？？"><a href="#一、什么是Git？？" class="headerlink" title="一、什么是Git？？"></a>一、什么是 Git？？</h2><ul>
+        <h2 id="一什么是git">一、什么是 Git？？</h2>
+<ul>
 <li><p>git</p>
-<p>一个<strong>分布式</strong>的<strong>版本控制系统</strong></p>
-</li>
-<li><p>gitkraken</p>
-<p>一个可视化的 git 管理工具</p>
-</li>
-<li><p>github</p>
+<p>一个<strong>分布式</strong>的<strong>版本控制系统</strong></p></li>
+<li><p> gitkraken</p>
+<p>一个可视化的 git 管理工具</p></li>
+<li><p> github</p>
 <p>一个 git 的远端仓库（同类的还有 gitlab、gitee 等）</p>
 <span id="more"></span>
-
 <blockquote>
 <p>所以，不要把 git 和实验室的 gitlab 混为一谈。git 是管理版本的工具，是对于本地代码的管理；而 gitlab 是一个远端仓库，用于存放 git 管理的代码。</p>
-</blockquote>
-</li>
+</blockquote></li>
 </ul>
-<h2 id="二、了解Git"><a href="#二、了解Git" class="headerlink" title="二、了解Git"></a>二、了解 Git</h2><p>所以我们现在先抛开远端仓库，用 git 管理好本地代码先吧！</p>
-<ol>
+<h2 id="二了解git">二、了解 Git</h2>
+<p>所以我们现在先抛开远端仓库，用 git 管理好本地代码先吧！</p>
+<ol type="1">
 <li><p>git 的三个区域（空间维度）：</p>
 <ul>
 <li><strong>工作区域（Working Directory）</strong>：也就是平时存放代码的地方</li>
 <li><strong>暂存区域（Stage）</strong>：用于临时存放你的改动，事实上它只是一个文件，保存即将提交的文件列表信息</li>
 <li><strong> Git 仓库（Repository）</strong>：是安全存放数据的位置，这里边有你提交的所有版本的数据。</li>
 </ul>
-<p><em>在本地提交代码基本上就是这三个状态的转换</em></p>
-</li>
-<li><p>git 文件的四个状态：</p>
+<p><em>在本地提交代码基本上就是这三个状态的转换</em></p></li>
+<li><p> git 文件的四个状态：</p>
 <ul>
 <li><strong>未跟踪（untracked）</strong>：新文件，没被添加进暂存区过</li>
 <li><strong>已修改（modified）</strong>：对应了在工作区内修改了文件</li>
 <li><strong>已暂存（staged）</strong>：对应了已经把修改的文件提交到暂存区域</li>
 <li><strong>已提交（committed）</strong>：将暂存区域提交到一个新的版本，工作区回归未修改状态</li>
-</ul>
-</li>
+</ul></li>
 <li><p> git 的版本（时间维度）：</p>
-<p><img data-src="/posts/502aa6b7/2-2-1.png" alt="截取自http://bramus.github.io/ws2-sws-course-materials/xx.git.html"></p>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/2-2-1.png" alt="截取自http://bramus.github.io/ws2-sws-course-materials/xx.git.html"><figcaption aria-hidden="true">截取自 http://bramus.github.io/ws2-sws-course-materials/xx.git.html</figcaption>
+</figure>
 <p>每一次 commit 都会根据提交的内容和人计算出哈希值作为这个 commit 的 id。</p>
-<p><code>HEAD</code> 是一个指针，指向当前的状态的 commit；<code>HEAD~</code> 则是指向上一个 commit 的指针（如图为 1d7a184），<code>HEAD~X</code> 则是指向上 X 个 commit 的指针。</p>
-</li>
+<p><code>HEAD</code> 是一个指针，指向当前的状态的 commit；<code>HEAD~</code> 则是指向上一个 commit 的指针（如图为 1d7a184），<code>HEAD~X</code> 则是指向上 X 个 commit 的指针。</p></li>
 </ol>
-<h2 id="三、上手Git！"><a href="#三、上手Git！" class="headerlink" title="三、上手Git！"></a>三、上手 Git！</h2><ul>
+<h2 id="三上手git">三、上手 Git！</h2>
+<ul>
 <li><p><strong>来了老弟</strong></p>
 <p>首先，git 为了辨别是谁提交的代码，你必须设置你的 username 和 emial</p>
 <figure class="highlight lua"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">config</span> <span class="comment">--global user.name "your name"</span></span><br><span class="line">git <span class="built_in">config</span> <span class="comment">--global user.email "your@email.com"</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>这仅仅是给 git 辨别提交代码的身份用，你喜欢设置假的或者用我的名字上传我也一点办法也没有。</p>
 <p>以上代码是设置全局的，如果你只想这个用户名和邮箱只对此工程有效，去掉 <code>--global</code> 即可。</p>
 <p>然后就可以初始化仓库</p>
 <figure class="highlight csharp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">init</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>至此我们的工程已经进入了由 git 支配的世界</p>
-</li>
+<p>至此我们的工程已经进入了由 git 支配的世界</p></li>
 <li><p><strong>工作区 -&gt; 暂存区</strong></p>
 <p>我们可以用以下命令查看目前版本库的状态：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git status</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>顺便插播 <code>status</code> 的部分选项：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>选项</th>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>-s</code>（<code>--short</code>）</td>
 <td>以短格式输出</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>-b</code>（<code>--branch</code>）</td>
 <td>显示分支和跟踪信息</td>
 </tr>
-<tr>
-<td>…</td>
-<td>…</td>
+<tr class="odd">
+<td>...</td>
+<td>...</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>如果你刚刚 <code>init</code> 了一个 git 仓库，那么你会发现你的文件处于 untrack 的状态；</p>
 <p>如果你刚刚修改了某个文件，那么你会发现被修改的文件处于 unstage 状态；</p>
 <p>此时我们需要用以下命令将这些文件添加到暂存区中：</p>
 <figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="builtin-name">add</span> yourfile</span><br></pre></td></tr></tbody></table></figure>
-
 <p>特殊用法：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>命令</th>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>git add -A</code></td>
 <td>提交所有变化</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>git add -u</code></td>
 <td>提交被修改 (modified) 和被删除 (deleted) 文件，不包括新文件 (new)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>git add .</code></td>
 <td>提交新文件 (new) 和被修改 (modified) 文件，不包括被删除 (deleted) 文件</td>
 </tr>
-</tbody></table>
-</li>
+</tbody>
+</table></li>
 <li><p><strong>暂存区 -&gt; Git 仓库</strong></p>
 <p>接下来就是提交代码环节了！</p>
 <figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">"your commit message"</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>但是往往事情没有那么简单，有的人提交了代码后发现，好像落了点什么，不要着急不要回退。将新更改好的版本 <code>add</code> 到暂存区后，使用以下命令将这次改变合并到之前的 commit 中：</p>
 <figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span>  <span class="comment">--amend</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>如果不需要修改 commit message 的话，还可以加上 <code>--no-edit</code>!</p>
-</li>
-<li><p><strong>查看状态</strong></p>
+<p>如果不需要修改 commit message 的话，还可以加上 <code>--no-edit</code>!</p></li>
+<li><p><strong> 查看状态</strong></p>
 <p>如果说上文的 <code>status</code> 能查看空间维度的状态的话，以下命令就能查看时间维度的状态：</p>
 <figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><code>log</code> 提供了不少的选项，以下列出少许常用的，更多的建议自行搜索：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>选项</th>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>--graph</code></td>
 <td>显示 ASCII 图形表示的分支合并历史。</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>--oneline</code></td>
 <td>只显示提交 ID 和提交信息的第一行</td>
 </tr>
-<tr>
-<td>…</td>
-<td>…</td>
+<tr class="odd">
+<td>...</td>
+<td>...</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>接下来的命令用于找不同：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git diff</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>以下表格很重要：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>比较工作区与上次 commit</th>
 <th> 比较暂存区和上一次 commit</th>
 <th> 比较工作区和暂存区</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>git diff</code></td>
 <td><code>git diff --cached</code></td>
 <td><code>git diff HEAD</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>工作区下列命令是对 git 文件进行删除、重命名：</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> fileA.cpp              <span class="comment"># 从git中删除fileA.cpp文件</span></span><br><span class="line">git <span class="built_in">mv</span> fileB.cpp fileC.cpp    <span class="comment">#将fileB.cpp重命名为fileC.cpp</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li><p><strong>暂存修改</strong></p>
 <p>除了 commit，我们还可以用如下命令安全的存放你的现在的状态哦</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git stash</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>用如下命令就可以恢复暂存了</p>
 <figure class="highlight avrasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="keyword">pop</span></span><br></pre></td></tr></tbody></table></figure></li>
 </ul>
-<h2 id="四、穿越时间"><a href="#四、穿越时间" class="headerlink" title="四、穿越时间"></a>四、穿越时间</h2><p>欲想穿越，就要搞懂分清两个命令 <code>reset</code> 和 <code>checkout</code></p>
+<h2 id="四穿越时间">四、穿越时间</h2>
+<p>欲想穿越，就要搞懂分清两个命令 <code>reset</code> 和 <code>checkout</code></p>
 <ul>
 <li><p><strong>reset</strong></p>
 <p>使用如下命令可以将 <strong>HEAD 分支</strong>移到前一个 commit</p>
 <figure class="highlight maxima"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">reset</span> HEAD~</span><br></pre></td></tr></tbody></table></figure>
-
 <p>当然也可以把 <code>HEAD~</code> 替换成你想到达的分支名、commit id！</p>
 <p>注意以下区别：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>命令</th>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>git reset --mixed</code> (默认)</td>
 <td> 修改版本库、暂存区</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>git reset --soft</code></td>
 <td>修改版本库</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>git reset --hard</code></td>
 <td>修改版本库、暂存区、工作区</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>用 <code>git log</code> 一看，为什么我回到前一个 commit 之后原来的就消失了！？？</p>
 <p>不着急，我们可以使用以下命令找回你的 commit id 和 HEAD 指针！</p>
 <figure class="highlight angelscript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">ref</span>log</span><br></pre></td></tr></tbody></table></figure>
-
 <p>而且 <code>reset</code> 还可以单独修改个别文件</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="selector-attr">[版本]</span> <span class="selector-attr">[文件名或路径]</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li><p><strong>checkout</strong></p>
 <p>使用如下命令可以把 <strong>HEAD 指针</strong>移到某个分支</p>
 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> checkout<span class="meta"> [branchname]</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>当然也可以把分支名替换成 HEAD 指针、commit id！</p>
 <p>那么，<code>checkout</code> 和 <code>reset</code> 又有什么区别！！？</p>
-<p><img data-src="/posts/502aa6b7/1033130145-57a48436a5fcd_articlex.png" alt="图片描述"></p>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/1033130145-57a48436a5fcd_articlex.png" alt="图片描述"><figcaption aria-hidden="true">图片描述</figcaption>
+</figure>
 <p>最重要的区别在于 <code>reset</code> 会移动 HEAD 所指向分支的指向，而 <code>checkout</code> 只移动 HEAD 指针本身！</p>
-<p>这样带来了个问题，使用 checkout 你可以指向一个并没有任何分支指向的 commit！此时 git 便会帮你创建一个<strong>匿名分支</strong>！在匿名分支上的所有操作在你切换到别的分支时会被全部丢弃！</p>
-</li>
+<p>这样带来了个问题，使用 checkout 你可以指向一个并没有任何分支指向的 commit！此时 git 便会帮你创建一个<strong>匿名分支</strong>！在匿名分支上的所有操作在你切换到别的分支时会被全部丢弃！</p></li>
 </ul>
-<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><ul>
+<h2 id="五分支">五、分支</h2>
+<ul>
 <li><p><strong>你的第一个分支</strong></p>
 <p>使用以下命令查看分支状况：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git branch</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>使用以下命令创建名为 develop 的分支，并切换到新分支下：</p>
 <figure class="highlight mipsasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">branch </span>develop      <span class="comment"># 创建分支</span></span><br><span class="line">git checkout develop    <span class="comment"># 切换到develop分支下</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>或者使用下面命令偷懒！</p>
 <figure class="highlight mipsasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="keyword">b </span>hotfix  <span class="comment"># 创建并切换到hotfix分支下</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li><p><strong>merge 合并！</strong></p>
 <p>以下命令将 develop 分支合并到 master 中：</p>
 <figure class="highlight crmsh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="keyword">master</span>    <span class="title"># 首先要切换到master</span>分支！</span><br><span class="line">git merge develop      <span class="comment"># 将develop分支merge到master中</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>要注意的是，使用以上命令，git 会采用默认的 <code>Fast forward</code> 格式进行 <code>merge</code>（因为此时 develop 分支比 master 分支新），这样 <code>merge</code> 的这次操作不会有 <code>commit</code> 信息，<code>log</code> 中也不会有分支的图案。我们可以采取 <code>--no-ff</code> 这种方式保留 <code>merge</code> 的 <code>commit</code> 信息：</p>
 <figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> merge --<span class="literal">no</span>-ff -m <span class="string">"commit message"</span> develop</span><br></pre></td></tr></tbody></table></figure>
-
 <p>燃鹅很多时候时期并没有那么简单，更多时候在 merge 之后便会报告合并出现了冲突！git 会在有冲突的文件下作形如以下的标记：</p>
 <figure class="highlight asciidoc"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"><span class="section"># edited in master</span></span><br><span class="line"><span class="section">=======</span></span><br><span class="line"># edited in develop</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; develop</span><br></pre></td></tr></tbody></table></figure>
-
 <p>这时，<code># edited in develop</code> 和<code># edited in master</code> 发生了冲突，当我们手动处理好冲突之后就可以 <code>commit</code> 代码啦！</p>
 <p>此时，删除 develop 分支也不会有什么影响啊（仅删除了 develop 分支的指针）：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git branch -d develop</span></span><br></pre></td></tr></tbody></table></figure></li>
 <li><p><strong>rebase</strong></p>
 <p>文字功底匮乏，请看图！</p>
-<p><img data-src="/posts/502aa6b7/4-3-1.png" alt="重新划分分支冲突"></p>
-<p><img data-src="/posts/502aa6b7/4-3-2-1581007874185.png" alt="重新划分分支冲突"></p>
-<p><img data-src="/posts/502aa6b7/4-3-3.png" alt="重新划分分支冲突"></p>
-<p><img data-src="/posts/502aa6b7/4-3-4.png" alt="重新划分分支冲突"></p>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-1.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+</figure>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-2-1581007874185.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+</figure>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-3.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+</figure>
+<figure>
+<img data-src="Git%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/4-3-4.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+</figure>
 <p>故事是这样的，原本在 branch-A 的 C3 基于了 C1 来开发。突然程序出现了个惊天大 bug，情急之下新建了分支 branch-B 修复了惊天大 bug。但是 C3 当然也想在无惊天大 bug 的代码下进行开发呀！于是便把分支 branch-B<code>rebase</code> 到了 branch-A 中，此时 C3*（这时的 C3 已经不是往年的 C3，是没有惊天大 bug 的 C3，故加 *）已经变成了基于 C4 开发了！</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git rebase develop</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>在处理冲突之后，使用以下命令就可以成功的 rebase 啦</p>
 <figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --<span class="keyword">continue</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><em>注意！rebase 会无情修改别人的 commit！如图 C2、C4</em></p>
-</li>
+<p><em>注意！rebase 会无情修改别人的 commit！如图 C2、C4</em></p></li>
 </ul>
-<h2 id="六、远端仓库"><a href="#六、远端仓库" class="headerlink" title="六、远端仓库"></a>六、远端仓库</h2><p>查看远端仓库：</p>
+<h2 id="六远端仓库">六、远端仓库</h2>
+<p>查看远端仓库：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>加上 <code>-v</code> 可显示需要读写远端仓库使用的 Git 保存的简写与其对应的 URL。</p>
 <p>查看某远端仓库更多信息：</p>
 <figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="keyword">show</span> [remote-<span class="type">name</span>]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>添加远端仓库：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add <span class="selector-attr">[shortname]</span> <span class="selector-attr">[url]</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>克隆远端仓库：</p>
 <figure class="highlight crmsh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">[url</span>]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>从远端仓库中获得数据：</p>
 <figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">fetch</span> [remote-<span class="type">name</span>]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>如果你有一个分支设置为跟踪一个远端分支，可以使用 <code>git pull</code> 命令来自动的抓取然后合并远端分支到当前分支：</p>
 <figure class="highlight apache"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> pull<span class="meta"> [remote-name]</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>查看本地分支和远端分支的跟踪关系：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git branch -vv</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>推送到远端仓库:</p>
 <figure class="highlight applescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git push [remote-<span class="built_in">name</span>] [branch-<span class="built_in">name</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时创建远端分支方法</span></span><br><span class="line">git push [remote-<span class="built_in">name</span>] [branch-<span class="built_in">name</span>]:[remote-branch-<span class="built_in">name</span>]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>跟踪一个远端分支：</p>
 <figure class="highlight applescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置一个已有的本地分支跟踪一个刚刚拉取下来的远端分支</span></span><br><span class="line">git branch -u [remote-<span class="built_in">name</span>]/[branch-<span class="built_in">name</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 远端有本地无</span></span><br><span class="line">git checkout <span class="comment">--track [remote-name]/[branch-name]</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">git checkout -b [branch-<span class="built_in">name</span>] [remote-<span class="built_in">name</span>]/[branch-<span class="built_in">name</span>]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>远端仓库重命名：</p>
 <figure class="highlight coq"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">rename</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>删除远端仓库：</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git remote rm</span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -631,6 +618,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/40163972/" rel="next" title="LaTex 公式笔记">
+                  LaTex 公式笔记 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -664,14 +654,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">25k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">12 分钟</span>
+    <span title="站点阅读时长">23 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -724,6 +714,12 @@
   <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
