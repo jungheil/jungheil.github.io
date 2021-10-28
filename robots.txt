@@ -10,6 +10,6 @@ Disallow: /tags/
 Disallow: /CNAME
 Disallow: /README.md
 Disallow: /*?*
-Disallow: / *.js$
+Disallow: /*.js$
 
 Sitemap: https://www.jungh.xyz/sitemap.xml

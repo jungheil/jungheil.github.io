@@ -342,7 +342,7 @@
 </ul></li>
 <li><p> git 的版本（时间维度）：</p>
 <figure>
-<img data-src="/posts/502aa6b7/2-2-1.png" alt="截取自http://bramus.github.io/ws2-sws-course-materials/xx.git.html"><figcaption aria-hidden="true">截取自 http://bramus.github.io/ws2-sws-course-materials/xx.git.html</figcaption>
+<img data-src="/posts/502aa6b7/2-2-1.png" alt="截取自http://bramus.github.io/ws2-sws-course-materials/xx.git.html"><figcaption>截取自 http://bramus.github.io/ws2-sws-course-materials/xx.git.html</figcaption>
 </figure>
 <p>每一次 commit 都会根据提交的内容和人计算出哈希值作为这个 commit 的 id。</p>
 <p><code>HEAD</code> 是一个指针，指向当前的状态的 commit；<code>HEAD~</code> 则是指向上一个 commit 的指针（如图为 1d7a184），<code>HEAD~X</code> 则是指向上 X 个 commit 的指针。</p></li>
@@ -510,7 +510,7 @@
 <p>当然也可以把分支名替换成 HEAD 指针、commit id！</p>
 <p>那么，<code>checkout</code> 和 <code>reset</code> 又有什么区别！！？</p>
 <figure>
-<img data-src="/posts/502aa6b7/1033130145-57a48436a5fcd_articlex.png" alt="图片描述"><figcaption aria-hidden="true">图片描述</figcaption>
+<img data-src="/posts/502aa6b7/1033130145-57a48436a5fcd_articlex.png" alt="图片描述"><figcaption>图片描述</figcaption>
 </figure>
 <p>最重要的区别在于 <code>reset</code> 会移动 HEAD 所指向分支的指向，而 <code>checkout</code> 只移动 HEAD 指针本身！</p>
 <p>这样带来了个问题，使用 checkout 你可以指向一个并没有任何分支指向的 commit！此时 git 便会帮你创建一个<strong>匿名分支</strong>！在匿名分支上的所有操作在你切换到别的分支时会被全部丢弃！</p></li>
@@ -537,16 +537,16 @@
 <li><p><strong>rebase</strong></p>
 <p>文字功底匮乏，请看图！</p>
 <figure>
-<img data-src="/posts/502aa6b7/4-3-1.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+<img data-src="/posts/502aa6b7/4-3-1.png" alt="重新划分分支冲突"><figcaption>重新划分分支冲突</figcaption>
 </figure>
 <figure>
-<img data-src="/posts/502aa6b7/4-3-2-1581007874185.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+<img data-src="/posts/502aa6b7/4-3-2-1581007874185.png" alt="重新划分分支冲突"><figcaption>重新划分分支冲突</figcaption>
 </figure>
 <figure>
-<img data-src="/posts/502aa6b7/4-3-3.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+<img data-src="/posts/502aa6b7/4-3-3.png" alt="重新划分分支冲突"><figcaption>重新划分分支冲突</figcaption>
 </figure>
 <figure>
-<img data-src="/posts/502aa6b7/4-3-4.png" alt="重新划分分支冲突"><figcaption aria-hidden="true">重新划分分支冲突</figcaption>
+<img data-src="/posts/502aa6b7/4-3-4.png" alt="重新划分分支冲突"><figcaption>重新划分分支冲突</figcaption>
 </figure>
 <p>故事是这样的，原本在 branch-A 的 C3 基于了 C1 来开发。突然程序出现了个惊天大 bug，情急之下新建了分支 branch-B 修复了惊天大 bug。但是 C3 当然也想在无惊天大 bug 的代码下进行开发呀！于是便把分支 branch-B<code>rebase</code> 到了 branch-A 中，此时 C3*（这时的 C3 已经不是往年的 C3，是没有惊天大 bug 的 C3，故加 *）已经变成了基于 C4 开发了！</p>
 <figure class="highlight ebnf"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git rebase develop</span></span><br></pre></td></tr></tbody></table></figure>
