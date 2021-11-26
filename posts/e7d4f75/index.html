@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.svg">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#222">
+  <meta name="google-site-verification" content="156w5X5j__VGn-OQhr54GLbG4yyfZvnptpPyY0sMMDs">
+  <meta name="msvalidate.01" content="62F487B998DEB39BD46BF8F8DFFDFE5D">
+  <meta name="baidu-site-verification" content="code-GfeY2kkOsb">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CNoto+Serif+SC:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+<meta name="description" content="相机模型与标定笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="相机模型与标定笔记">
+<meta property="og:url" content="https://www.jungh.xyz/posts/e7d4f75/index.html">
+<meta property="og:site_name" content="摸鱼怪">
+<meta property="og:description" content="相机模型与标定笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/4aaedcf6d7ec14098508056c52cccd700df7c56a.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/7ee9eed0c33090c7e0dc7d80341ce630d5d68806.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/%E6%88%AA%E5%B1%8F2021-11-18%2016.16.12.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/189cebd1a47791f5947ce99ced89d0f3d376d827.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/image-20211118171045569.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/9fa21f91f1f427791f3afdc4f26580f618119c9c.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/1598479-20200814182323435-1327674777.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/image-20211118171850959.png">
+<meta property="og:image" content="https://www.jungh.xyz/posts/e7d4f75/image-20211125162218474.png">
+<meta property="article:published_time" content="2021-11-26T15:28:33.000Z">
+<meta property="article:modified_time" content="2021-11-26T15:42:58.706Z">
+<meta property="article:author" content="Chris Li">
+<meta property="article:tag" content="相机内参">
+<meta property="article:tag" content="标定">
+<meta property="article:tag" content="畸变">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.jungh.xyz/posts/e7d4f75/4aaedcf6d7ec14098508056c52cccd700df7c56a.png">
+
+
+<link rel="canonical" href="https://www.jungh.xyz/posts/e7d4f75/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.jungh.xyz/posts/e7d4f75/","path":"posts/e7d4f75/","title":"相机模型与标定笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>相机模型与标定笔记 | 摸鱼怪</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">摸鱼怪</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是Chris的翘课日常！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AD%94%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9D%90%E6%A0%87%E7%B3%BB%E6%8A%95%E5%BD%B1"><span class="nav-number">1.</span> <span class="nav-text">针孔模型的坐标系投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB---%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB%E5%A4%96%E5%8F%82"><span class="nav-number">2.</span> <span class="nav-text">世界坐标系 -&gt; 相机坐标系（外参）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB---%E5%BD%92%E4%B8%80%E5%8C%96%E5%B9%B3%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">相机坐标系 -&gt; 归一化平面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E4%B8%80%E5%8C%96%E5%B9%B3%E9%9D%A2---%E5%83%8F%E7%B4%A0%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">4.</span> <span class="nav-text">归一化平面 -&gt; 像素坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%B8%E5%8F%98%E7%9F%AB%E6%AD%A3"><span class="nav-number">5.</span> <span class="nav-text">畸变矫正</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%84%E5%90%91%E7%95%B8%E5%8F%98"><span class="nav-number">5.1.</span> <span class="nav-text">径向畸变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E5%90%91%E7%95%B8%E5%8F%98"><span class="nav-number">5.2.</span> <span class="nav-text">切向畸变</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%B8%E5%8F%98%E7%9F%AB%E6%AD%A3-1"><span class="nav-number">5.3.</span> <span class="nav-text">畸变矫正</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%BB%E7%95%B8%E5%8F%98%E7%A8%8B%E5%BA%8F"><span class="nav-number">5.4.</span> <span class="nav-text">去畸变程序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%B1%BC%E7%9C%BC%E7%9B%B8%E6%9C%BA"><span class="nav-number">6.</span> <span class="nav-text">鱼眼相机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%A0%E6%B0%8F%E6%A0%87%E5%AE%9A%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">张氏标定法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97h"><span class="nav-number">7.1.</span> <span class="nav-text">计算 H</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%B1h%E8%AE%A1%E7%AE%97k"><span class="nav-number">7.2.</span> <span class="nav-text">由 H 计算 K</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%82%E6%95%B0"><span class="nav-number">7.3.</span> <span class="nav-text">非线性参数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-number">8.</span> <span class="nav-text">工具</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Li"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:jungheilai@gmail.com" title="E-Mail → mailto:jungheilai@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.jungh.xyz/posts/e7d4f75/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="摸鱼怪">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          相机模型与标定笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-26 23:28:33 / 修改时间：23:42:58" itemprop="dateCreated datePublished" datetime="2021-11-26T23:28:33+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CV/" itemprop="url" rel="index"><span itemprop="name">CV</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>相机模型与标定笔记</p>
+<span id="more"></span>
+<h3 id="针孔模型的坐标系投影">针孔模型的坐标系投影</h3>
+<figure>
+<img data-src="/posts/e7d4f75/4aaedcf6d7ec14098508056c52cccd700df7c56a.png" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>世界坐标系 -&gt; 相机坐标系 -&gt; 归一化平面 -&gt; 像素坐标系</p>
+<h3 id="世界坐标系---相机坐标系外参">世界坐标系 -&gt; 相机坐标系（外参）</h3>
+<p><span class="math display">\[
+P_c=RP_w+t=\begin{bmatrix}R&amp;t\\0&amp;1\end{bmatrix}P_w=TP_w=
+\begin{bmatrix}
+X\\Y\\Z
+\end{bmatrix}
+\]</span></p>
+<h3 id="相机坐标系---归一化平面">相机坐标系 -&gt; 归一化平面</h3>
+<figure>
+<img data-src="/posts/e7d4f75/7ee9eed0c33090c7e0dc7d80341ce630d5d68806.png" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>如上图所示，<span class="math inline">\(X'\)</span> 为归一化平面坐标，<span class="math inline">\(X\)</span> 为相机坐标系坐标，<span class="math inline">\(f\)</span> 为焦距（通常单位是毫米 mm）。根据相似三角形： <span class="math display">\[
+\begin{aligned}
+\begin{cases}
+X'=f \frac XZ \\
+Y'=f \frac YZ
+\end{cases}
+\end{aligned}
+\]</span> 此时已将归一化平面翻转（非倒像），否则<span class="math inline"> \(X'\)</span> 与<span class="math inline"> \(Y'\)</span> 需取负。</p>
+<h3 id="归一化平面---像素坐标系">归一化平面 -&gt; 像素坐标系</h3>
+<figure>
+<img data-src="/posts/e7d4f75/%E6%88%AA%E5%B1%8F2021-11-18%2016.16.12.png" alt="截屏2021-11-18 16.16.12"><figcaption>截屏 2021-11-18 16.16.12</figcaption>
+</figure>
+<p>像素坐标系通常从图像左上角开始</p>
+<p>设在<span class="math inline"> \(X'\)</span> 方向：<span class="math inline">\(1\,pix=dx\,mm\)</span> （毫米转像素）;</p>
+<p>在<span class="math inline"> \(Y'\)</span> 方向：<span class="math inline">\(1\,pix=dy\,mm\)</span></p>
+<p>则： <span class="math display">\[
+\begin{cases}
+u=\frac {1}{dx}X'+c_x\\
+v=\frac {1}{dy}Y'+c_y
+\end{cases}
+\]</span> 与前一步合并一下： <span class="math display">\[
+\begin{cases}
+u=f_x\frac XZ+c_x\\
+v=f_y\frac YZ+c_y
+\end{cases}
+\]</span> 转换成矩阵形式： <span class="math display">\[
+\begin {aligned}
+\underbrace {\begin {pmatrix}
+u\\v\\1
+\end {pmatrix}}_\text {其次坐标} = 
+\frac 1Z
+\begin {pmatrix}
+f_x&amp;\gamma&amp;c_x\\
+0&amp;f_y&amp;c_y\\
+0 &amp;0&amp;1
+\end {pmatrix}
+\underbrace {\begin {pmatrix}
+X\\Y\\Z
+\end {pmatrix}}_\text {非其次坐标}
+=\frac 1ZKP
+\end {aligned}
+\]</span> 其中： <span class="math display">\[
+\begin{cases}
+f_x=\frac f{dx}\\
+f_y=\frac f{dy}
+\end{cases}
+\]</span> <span class="math inline">\(\gamma\)</span> 描述的是两个坐标轴的偏转。</p>
+<p><span class="math inline">\(K\)</span> 称为内参矩阵</p>
+<p>对于齐次坐标，尺度因子（这里指距离 Z）不会改变坐标值的；与光心位于同一直线的所有点在归一化平面上是同一个投影点。</p>
+<h3 id="畸变矫正">畸变矫正</h3>
+<p>畸变主要分为了径向畸变和切向畸变：</p>
+<h4 id="径向畸变">径向畸变</h4>
+<figure>
+<img data-src="/posts/e7d4f75/189cebd1a47791f5947ce99ced89d0f3d376d827.png" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>畸变模型使用多项式来描述如下： <span class="math display">\[
+\begin{aligned}
+x_{distort}=x_n\cdot(1+k_1r^2+k_2r^4+k_3r^6)\\
+y_{distort}=y_n\cdot(1+k_1r^2+k_2r^4+k_3r^6)
+\end{aligned}
+\]</span> 其中<span class="math inline"> \(x_n\)</span> 和<span class="math inline"> \(y_n\)</span> 为归一化坐标： <span class="math display">\[
+\begin{cases}
+x_n = \frac XZ \\
+y_n = \frac YZ
+\end{cases}
+\]</span> 注意他们并不是归一化平面上的坐标，与其相差了一个因子<span class="math inline"> \(f\)</span>。 <span class="math display">\[
+r=\sqrt{x_n^2+y_n^2}
+\]</span> 一般多项式取到前三项，即三个径向畸变参数<span class="math inline"> \(k_1\)</span>,<span class="math inline">\(k_2\)</span>,<span class="math inline">\(k_3\)</span>。</p>
+<p>对于畸变很小的中心区域，　主要起作用的是<span class="math inline"> \(k_1\)</span>；</p>
+<p>对于畸变较大的边缘区域，主要起作用的是<span class="math inline"> \(k_2\)</span>；</p>
+<p>对于畸变很大的鱼眼相机，可以加入<span class="math inline"> \(k_3\)</span> 来表示；</p>
+<figure>
+<img data-src="/posts/e7d4f75/image-20211118171045569.png" alt="image-20211118171045569"><figcaption>image-20211118171045569</figcaption>
+</figure>
+<h4 id="切向畸变">切向畸变</h4>
+<figure>
+<img data-src="/posts/e7d4f75/9fa21f91f1f427791f3afdc4f26580f618119c9c.png" alt="img"><figcaption>img</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/e7d4f75/1598479-20200814182323435-1327674777.png" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>通常是透镜与像平面没有严格平行导致。</p>
+<p>畸变模型描述如下： <span class="math display">\[
+\begin{aligned}
+x_{distort}=x_n+2p_1x_ny_n+p_2(r^2+2x^2) \\
+y_{distort}=y_n+p_1(r^2+2y^2)+2p_2x_ny_n
+\end{aligned}
+\]</span> <img data-src="/posts/e7d4f75/image-20211118171850959.png" alt="image-20211118171850959"></p>
+<h4 id="畸变矫正-1">畸变矫正</h4>
+<p>我们合并一下可以得到： <span class="math display">\[
+\begin{cases}
+x_{distort}=x_n\cdot(1+k_1r^2+k_2r^4+k_3r^6)+2p_1x_ny_n+p_2(r^2+2x^2)\\
+y_{distort}=y_n\cdot(1+k_1r^2+k_2r^4+k_3r^6)+p_1(r^2+2y^2)+2p_2x_ny_n
+\end{cases}
+\]</span> 通常记相机畸变参数为： <span class="math display">\[
+disCoffes = [k_1,k_2,p_1,p_2,k_3]
+\]</span></p>
+<h4 id="去畸变程序">去畸变程序</h4>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">string image_file = <span class="string">"../test.png"</span>;   <span class="comment">// 请确保路径正确</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 本程序需要你自己实现去畸变部分的代码。尽管我们可以调用OpenCV的去畸变，但自己实现一遍有助于理解。</span></span><br><span class="line">    <span class="comment">// 畸变参数</span></span><br><span class="line">    <span class="keyword">double</span> k1 = <span class="number">-0.28340811</span>, k2 = <span class="number">0.07395907</span>, p1 = <span class="number">0.00019359</span>, p2 = <span class="number">1.76187114e-05</span>;</span><br><span class="line">    <span class="comment">// 内参</span></span><br><span class="line">    <span class="keyword">double</span> fx = <span class="number">458.654</span>, fy = <span class="number">457.296</span>, cx = <span class="number">367.215</span>, cy = <span class="number">248.375</span>;</span><br><span class="line"></span><br><span class="line">    cv::Mat image = cv::<span class="built_in">imread</span>(image_file,<span class="number">0</span>);   <span class="comment">// 图像是灰度图，CV_8UC1</span></span><br><span class="line">    <span class="keyword">int</span> rows = image.rows, cols = image.cols;</span><br><span class="line">    cv::Mat image_undistort = cv::<span class="built_in">Mat</span>(rows, cols, CV_8UC1);   <span class="comment">// 去畸变以后的图</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算去畸变后图像的内容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; rows; v++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">0</span>; u &lt; cols; u++) {</span><br><span class="line"></span><br><span class="line">            <span class="keyword">double</span> u_distorted = <span class="number">0</span>, v_distorted = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">double</span> x_distorted = <span class="number">0</span>, y_distorted = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">// TODO 按照公式，计算点(u,v)对应到畸变图像中的坐标(u_distorted, v_distorted) (~6 lines)</span></span><br><span class="line">            <span class="comment">// start your code here</span></span><br><span class="line">            <span class="keyword">double</span> x = (u - cx)/fx;</span><br><span class="line">            <span class="keyword">double</span> y = (v - cy)/fy;</span><br><span class="line">            <span class="keyword">double</span> r_2 = x*x + y*y;</span><br><span class="line">            x_distorted = x*(<span class="number">1</span>+k1*r_2+k2*r_2*r_2)+<span class="number">2</span>*p1*x*y+p2*(r_2+<span class="number">2</span>*x*x);</span><br><span class="line">            y_distorted = y*(<span class="number">1</span>+k1*r_2+k2*r_2*r_2)+p1*(r_2+<span class="number">2</span>*y*y)+<span class="number">2</span>*p2*x*y;</span><br><span class="line">            u_distorted = fx*x_distorted+cx;</span><br><span class="line">            v_distorted = fy*y_distorted+cy;</span><br><span class="line">            <span class="comment">// end your code here</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 赋值 (最近邻插值)</span></span><br><span class="line">            <span class="keyword">if</span> (u_distorted &gt;= <span class="number">0</span> &amp;&amp; v_distorted &gt;= <span class="number">0</span> &amp;&amp; u_distorted &lt; cols &amp;&amp; v_distorted &lt; rows) {</span><br><span class="line">                image_undistort.at&lt;uchar&gt;(v, u) = image.at&lt;uchar&gt;((<span class="keyword">int</span>) v_distorted, (<span class="keyword">int</span>) u_distorted);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                image_undistort.at&lt;uchar&gt;(v, u) = <span class="number">0</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 画图去畸变后图像</span></span><br><span class="line">    cv::<span class="built_in">imshow</span>(<span class="string">"image undistorted"</span>, image_undistort);</span><br><span class="line">    cv::<span class="built_in">waitKey</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="鱼眼相机">鱼眼相机</h3>
+<p>鱼眼相机标定不能使用针孔模型，而是使用鱼眼相机模型，见论文：Kannala J, Brandt S S. A generic camera model and calibration method for conventional, wide-angle, and fish-eye lenses [J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2006, 28 (8): 1335–1340.</p>
+<figure>
+<img data-src="/posts/e7d4f75/image-20211125162218474.png" alt="image-20211125162218474"><figcaption>image-20211125162218474</figcaption>
+</figure>
+<p>针孔相机可以描述成下述公示： <span class="math display">\[
+r=f\tan\theta
+\]</span></p>
+<p><span class="math display">\[
+\begin {aligned}
+\text {外参：} TX_w=\begin {bmatrix} X\\Y\\Z\end {bmatrix} \\
+x_n=\frac XZ,\;y_n = \frac YZ \\
+r^2 = x^2_n + y^2_n\\
+\theta = \arctan (r)\\
+\theta_d=k_0\theta+k_1\theta^3+k_2\theta^5+k_3\theta^7+k_4\theta^9\\
+x_d = \frac {\theta_d}{r} x_n,\;y_d = \frac {\theta_d}{r} y_n,\\
+u = f_xx_d+c_x, v = f_yy_d+c_y
+\end {aligned}
+\]</span></p>
+<h3 id="张氏标定法">张氏标定法</h3>
+<p><span class="math display">\[
+s\begin{bmatrix}u\\v\\1\end{bmatrix} = A\begin{bmatrix}r_1&amp;r_2&amp;r_3&amp;t\end{bmatrix}
+\begin{bmatrix}X\\Y\\0\\1\end{bmatrix}\\
+A = \begin{bmatrix}c&amp;cs&amp;xH\\0&amp;c(1+m)&amp;yH\\0&amp;0&amp;1\end{bmatrix}
+\]</span></p>
+<p>我们把世界坐标系设置在标定板上，所以世界坐标中的 Z=0。由于 Z=0，公示化简如下： <span class="math display">\[
+s\begin{bmatrix}u\\v\\1\end{bmatrix} = 
+\underbrace{\begin{bmatrix}c&amp;cs&amp;xH\\0&amp;c(1+m)&amp;yH\\0&amp;0&amp;1\end{bmatrix}}_K
+\underbrace{\begin{bmatrix}r_{11}&amp;r_{12}&amp;t_1\\r_{21}&amp;r_{22}&amp;t_2\\r_{31}&amp;r_{32}&amp;t_3\end{bmatrix}}
+_{\begin{bmatrix}r_1&amp;r_2&amp;t\end{bmatrix}}
+\begin{bmatrix}X\\Y\\1\end{bmatrix}
+\]</span></p>
+<h4 id="计算h">计算 H</h4>
+<p>单应矩阵 H： <span class="math display">\[
+H=\lambda\begin{bmatrix}c&amp;cs&amp;xH\\0&amp;c(1+m)&amp;yH\\0&amp;0&amp;1\end{bmatrix}
+\begin{bmatrix}r_{11}&amp;r_{12}&amp;t_1\\r_{21}&amp;r_{22}&amp;t_2\\r_{31}&amp;r_{32}&amp;t_3\end{bmatrix} \\
+\]</span> 其中<span class="math inline"> \(\lambda\)</span> 可以是任意的尺度因子</p>
+<p>在一张 checkerboard 图像上有<span class="math inline"> \(I\)</span> 个特征点，我们能生成<span class="math inline"> \(I\)</span> 条公式： <span class="math display">\[
+\begin{bmatrix}x_i\\y_i\\1\end{bmatrix}=H\begin{bmatrix}X_i\\Y_i\\1\end{bmatrix}
+\]</span> 由于 H 有 8DoF（少了一个尺度因子），每一个特征点提供 x 和 y 两个约束，所以一张图至少要有 4 个特征点算 H。</p>
+<h4 id="由h计算k">由 H 计算 K</h4>
+<p><span class="math display">\[
+H = \begin{bmatrix}h_1&amp;h_2&amp;h_3\end{bmatrix}=A\begin{bmatrix}r_1&amp;r_2&amp;t\end{bmatrix}
+\]</span></p>
+<p>由于 Q<span class="math inline">\(r_1\)</span> 和<span class="math inline"> \(r_2\)</span> 正交： <span class="math display">\[
+\begin{cases}
+r_1^Tr_2=0\\
+r_1^Tr_1 = r_2^Tr_2=1
+\end{cases}\\
+\]</span> 易得两个约束： <span class="math display">\[
+\begin{cases}
+r_1 = A^{-1}h_1\\
+r_1 = A^{-1}h_1
+\end{cases} \;\Rightarrow\;
+\begin{cases}
+h_1^TA^{-T}A^{-1}h_2=0\\
+h_1^TA^{-T}A^{-1}h_1=h_2^TA^{-T}A^{-1}h_2
+\end{cases} \\
+\]</span> B 是对称阵，可以表示成 6D 向量 b <span class="math display">\[
+B=A^{-T}A^{-1}=\begin{bmatrix}B_{11}&amp;B_{12}&amp;B_{13}\\B_{21}&amp;B_{22}&amp;B_{23}\\B_{31}&amp;B_{32}&amp;B_{33}\end{bmatrix}\\
+b=\begin{bmatrix}B_{11}&amp;B_{12}&amp;B_{22}&amp;B_{13}&amp;B_{23}&amp;B_{33}^T\\\end{bmatrix}
+\]</span> 令： <span class="math display">\[
+h^T_iBh_j=v^T_{i,j}b \\
+\text{with}\\v=\begin{bmatrix}
+h_{i1}h_{j1}&amp;h_{i1}h_{j2}+h_{i2}h_{j1}&amp;h_{i2}h_{j2}&amp;h_{i3}h_{j1}+h_{i1}h_{j3}&amp;h_{i3}h_{j2}+h_{i2}h_{j3}&amp;h_{i3}h_{j3}
+\end{bmatrix}^T
+\]</span> 其中一个 H 可以生成一条下述公式： <span class="math display">\[
+\begin{bmatrix}v^T_{12}\\(v_{11}-v_{22)})^T\end{bmatrix}b=0
+\]</span> v 与 H 相关，b 与内参 K 相关。</p>
+<p>有 n 张图我们可以得到如下矩阵： <span class="math display">\[
+\begin{bmatrix}v^T_{012}\\(v_{011}-v_{022)})^T\\...\\
+v^T_{n12}\\(v_{n11}-v_{n22)})^T\end{bmatrix}b=Vb=0
+\]</span> 强制添加约束 b=1，最小化下述误差： <span class="math display">\[
+b^*=arg\,\underset b{min}\,||b|| \quad\text{with}\:||b||=1
+\]</span> 因为 B 有 5 或 6 个 DoF，我们需要至少 3 个平面。</p>
+<h4 id="非线性参数">非线性参数</h4>
+<p>非线性参数在这里即畸变向量，为图像坐标加上偏移量（畸变模型）： <span class="math display">\[
+\triangle x(x,k,q) \\
+\triangle y(y,k,q)
+\]</span> 其中 k,q 分别是径向畸变和切向畸变的参数。</p>
+<p>代畸变的内参<span class="math inline"> \(K_a\)</span> 可以表示为： <span class="math display">\[
+K_a=\begin{bmatrix}1&amp;0&amp;\triangle x(x,k,q)\\
+0&amp;1&amp;\triangle y(y,k,q)\\
+0&amp;0&amp;0\\
+\end{bmatrix}K
+\]</span> 优化以下函数： <span class="math display">\[
+\underset{(K,k,q,R_t,t_n)}{min}\;\sum_n\sum_i||x_{ni}-\hat{x}(K,k,q,R_t,t_n,X_{ni})||^2
+\]</span> <span class="math inline">\(K\)</span>：内参</p>
+<p><span class="math inline">\(k\)</span>：径向畸变</p>
+<p><span class="math inline">\(q\)</span>：切向畸变</p>
+<p><span class="math inline">\(R_t\)</span>：旋转矩阵</p>
+<p><span class="math inline">\(t_n\)</span>：平移向量</p>
+<p><span class="math inline">\(X_{ni}\)</span>：世界坐标</p>
+<h3 id="工具">工具</h3>
+<ol type="1">
+<li>OpenCV</li>
+<li>CamOdoCal</li>
+<li>Kalibr</li>
+<li>Matlab</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Chris Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.jungh.xyz/posts/e7d4f75/" title="相机模型与标定笔记">https://www.jungh.xyz/posts/e7d4f75/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%9B%B8%E6%9C%BA%E5%86%85%E5%8F%82/" rel="tag"><i class="fa fa-tag"></i> 相机内参</a>
+              <a href="/tags/%E6%A0%87%E5%AE%9A/" rel="tag"><i class="fa fa-tag"></i> 标定</a>
+              <a href="/tags/%E7%95%B8%E5%8F%98/" rel="tag"><i class="fa fa-tag"></i> 畸变</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/40163972/" rel="prev" title="LaTex 公式笔记">
+                  <i class="fa fa-chevron-left"></i> LaTex 公式笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Li</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">29k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">27 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-100" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.jungh.xyz/posts/e7d4f75/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e8ceb5acf587cb97cb08ed7f1c3e7d12"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

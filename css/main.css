@@ -22,6 +22,7 @@
   --highlight-foreground: #383a42;
   --highlight-gutter-background: #e6e6e7;
   --highlight-gutter-foreground: #4b4d54;
+  color-scheme: light;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -2136,7 +2137,6 @@ pre code {
 }
 .posts-expand .post-meta-container time {
   border-bottom: 1px dashed #999;
-  cursor: pointer;
 }
 .post-meta {
   display: flex;
