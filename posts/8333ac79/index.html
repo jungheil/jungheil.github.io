@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.svg">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#222">
+  <meta name="google-site-verification" content="156w5X5j__VGn-OQhr54GLbG4yyfZvnptpPyY0sMMDs">
+  <meta name="msvalidate.01" content="62F487B998DEB39BD46BF8F8DFFDFE5D">
+  <meta name="baidu-site-verification" content="code-GfeY2kkOsb">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CNoto+Serif+SC:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.jungh.xyz","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+<meta name="description" content="主要用于安装和复习vim键位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="neovim 的自定义：安装与键位备忘">
+<meta property="og:url" content="https://www.jungh.xyz/posts/8333ac79/index.html">
+<meta property="og:site_name" content="摸鱼怪">
+<meta property="og:description" content="主要用于安装和复习vim键位">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-10T16:27:54.000Z">
+<meta property="article:modified_time" content="2022-01-10T17:32:16.614Z">
+<meta property="article:author" content="Chris Li">
+<meta property="article:tag" content="vim">
+<meta property="article:tag" content="neovim">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.jungh.xyz/posts/8333ac79/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.jungh.xyz/posts/8333ac79/","path":"posts/8333ac79/","title":"neovim 的自定义：安装与键位备忘"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>neovim 的自定义：安装与键位备忘 | 摸鱼怪</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">摸鱼怪</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是Chris的翘课日常！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E4%BD%8D"><span class="nav-number">2.</span> <span class="nav-text">键位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E5%9F%BA%E7%A1%80"><span class="nav-number">2.1.</span> <span class="nav-text">一、基础</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Li"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Li</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:jungheilai@gmail.com" title="E-Mail → mailto:jungheilai@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.jungh.xyz/posts/8333ac79/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Li">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="摸鱼怪">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          neovim 的自定义：安装与键位备忘
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-11 00:27:54 / 修改时间：01:32:16" itemprop="dateCreated datePublished" datetime="2022-01-11T00:27:54+08:00">2022-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">主要用于安装和复习vim键位</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="安装">安装</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jungheil/my-nvim.git <span class="variable">$HOME</span>/.config/nvim</span><br><span class="line">sudo chmod +x <span class="variable">$HOME</span>/.config/nvim/install.sh</span><br><span class="line"><span class="variable">$HOME</span>/.config/nvim/install.sh</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="键位">键位</h3>
+<blockquote>
+<p>其中带 *` 表示为自定义键位！</p>
+</blockquote>
+<h4 id="一基础">一、基础</h4>
+<ol type="1">
+<li><p>全局</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>:h(elp) [keyword]</code></td>
+<td>帮助</td>
+</tr>
+<tr class="even">
+<td><code>:sav(eas) [filename]</code></td>
+<td>另存为</td>
+</tr>
+<tr class="odd">
+<td><code>:clo(se)</code></td>
+<td>关闭当前窗口</td>
+</tr>
+<tr class="even">
+<td><code>:ter(minal)</code></td>
+<td>打开终端</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-t&gt;</code></td>
+<td>* 在新窗口打开终端</td>
+</tr>
+<tr class="even">
+<td><code>K</code></td>
+<td>打开光标所在单词的 man 页面</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>移动光标</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>h</code></strong></td>
+<td><strong>左移光标</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>j</code></strong></td>
+<td><strong>下移光标</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>k</code></strong></td>
+<td><strong>上移光标</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>l</code></strong></td>
+<td><strong>右移光标</strong></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-j&gt;</code></td>
+<td>* 快速下移光标</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-k&gt;</code></td>
+<td>* 快速上移光标</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-d&gt;</code></td>
+<td>向下滚动半屏 (down)</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-u&gt;</code></td>
+<td>向上滚动半屏 (up)</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-b&gt;</code></td>
+<td>向上滚动一屏</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-f&gt;</code></td>
+<td>向下滚动一屏</td>
+</tr>
+<tr class="odd">
+<td><strong><code>w</code>, <code>W</code></strong></td>
+<td><strong>下一个单词开头 (大写含标点)</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>e</code>, <code>E</code></strong></td>
+<td><strong>下一个单词结尾 (大写含标点)</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>b</code>, <code>B</code></strong></td>
+<td><strong>上一个单词开头 (大写含标点)</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>ge</code>, <code>gE</code></strong></td>
+<td><strong>上一个单词结尾 (大写含标点)</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>f+{character}</code></strong></td>
+<td><strong>定位到下一个 <code>character</code></strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>F+{character}</code></strong></td>
+<td><strong>定位到前一个 <code>character</code></strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>t+{character}</code></strong></td>
+<td><strong>定位到下一个 <code>character</code> 之前</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>T+{character}</code></strong></td>
+<td><strong>定位到前一个 <code>character</code> 之前</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>;</code></strong></td>
+<td><strong>重复之前的 <code>f</code>, <code>t</code>, <code>F</code>, <code>T</code> 操作</strong></td>
+</tr>
+<tr class="even">
+<td><code>,</code></td>
+<td>反向重复之前的 <code>f</code>, <code>t</code>, <code>F</code>, <code>T</code> 操作</td>
+</tr>
+<tr class="odd">
+<td><code>0</code></td>
+<td>移动到行首</td>
+</tr>
+<tr class="even">
+<td><code>^</code></td>
+<td>移动到行首的非空白字符</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;leader&gt;a</code></td>
+<td>* 移动到行首的非空白字符</td>
+</tr>
+<tr class="even">
+<td><code>$</code></td>
+<td>移动到行尾</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;leader&gt;n</code></td>
+<td>* 移动到行尾</td>
+</tr>
+<tr class="even">
+<td><code>g_</code></td>
+<td>移动到行尾的非空白字符</td>
+</tr>
+<tr class="odd">
+<td><strong><code>A</code></strong></td>
+<td><strong>移动到行尾的非空白字符并进入插入模式</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>I</code></strong></td>
+<td><strong>移动到行首的非空白字符并进入插入模式</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>gg</code></strong></td>
+<td><strong>移动到文件第一行</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>G</code></strong></td>
+<td><strong>移动到文件最后一行</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>[num]gg</code> or <code>[num]5G</code></strong></td>
+<td><strong>移动到第 <code>num</code> 行</strong></td>
+</tr>
+<tr class="even">
+<td><code>}</code></td>
+<td>移动到下一个段落</td>
+</tr>
+<tr class="odd">
+<td><code>{</code></td>
+<td>移动到上一个段落</td>
+</tr>
+<tr class="even">
+<td><code>zz</code></td>
+<td>移动屏幕使光标居中</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>普通模式</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>r</code></strong></td>
+<td><strong>替换当前字符</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>R</code></strong></td>
+<td><strong>替换多个字符</strong></td>
+</tr>
+<tr class="odd">
+<td><code>J</code></td>
+<td>合并下一行并插入空格</td>
+</tr>
+<tr class="even">
+<td><code>gJ</code></td>
+<td>合并下一行</td>
+</tr>
+<tr class="odd">
+<td><code>cc</code></td>
+<td>删除当前行并进入插入模式</td>
+</tr>
+<tr class="even">
+<td><code>C</code></td>
+<td>删除光标以后并进出插入模式</td>
+</tr>
+<tr class="odd">
+<td><code>s</code></td>
+<td>删除字符并进入插入模式</td>
+</tr>
+<tr class="even">
+<td><code>S</code></td>
+<td>删除当前行并进入插入模式 (<code>cc</code>)</td>
+</tr>
+<tr class="odd">
+<td><strong><code>u</code></strong></td>
+<td><strong>撤销</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>U</code></strong></td>
+<td><strong>恢复撤销</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>.</code></strong></td>
+<td><strong>重复执行上一条命令</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&gt;&gt;</code></strong></td>
+<td><strong>向右缩进</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;&lt;</code></strong></td>
+<td><strong>向左缩进</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>yy</code></strong></td>
+<td><strong>复制当前行</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>yw</code></strong></td>
+<td><strong>复制当前单词</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>dd</code></strong></td>
+<td><strong>剪切当前行</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>dw</code></strong></td>
+<td><strong>剪切当前单词</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>x</code></strong></td>
+<td><strong>剪切当前字符</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>p</code></strong></td>
+<td><strong>光标后粘贴</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>P</code></strong></td>
+<td><strong>光标前粘贴</strong></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-s&gt;</code></td>
+<td>* 保存</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-1&gt;</code></td>
+<td>* 退出窗口</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-M-q&gt;</code></td>
+<td>* 强制退出窗口</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>插入模式</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>i</code></strong></td>
+<td><strong>从光标前开始插入字符</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>I</code></strong></td>
+<td><strong>从行首开始插入字符</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>a</code></strong></td>
+<td><strong>从光标后开始插入字符</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>A</code></strong></td>
+<td><strong>从行尾开始插入字符</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>o</code></strong></td>
+<td><strong>在当前行之下另起一行，开始插入字符</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>O</code></strong></td>
+<td><strong>在当前行之上另起一行，开始插入字符</strong></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;Esc&gt;</code></td>
+<td>退出插入模式</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-h&gt;</code></td>
+<td>* 左移光标</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-j&gt;</code></td>
+<td>* 下移光标</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-k&gt;</code></td>
+<td>* 上移光标</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-l&gt;</code></td>
+<td>* 右移光标</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-BS&gt;</code></td>
+<td>* 删除单词</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>可视化模式</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>v</code></strong></td>
+<td><strong>进入可视化模式</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>v</code></strong></td>
+<td><strong>进入可视化模式 (行选择)</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-v&gt;</code></strong></td>
+<td><strong>进入可视化模式 (块选择)</strong></td>
+</tr>
+<tr class="even">
+<td><code>o</code></td>
+<td>切换光标到选择区开头 / 结尾</td>
+</tr>
+<tr class="odd">
+<td><code>O</code></td>
+<td>切换光标到选择区的角</td>
+</tr>
+<tr class="even">
+<td><strong><code>I</code></strong></td>
+<td><strong>多行插入 (仅块选择)</strong></td>
+</tr>
+<tr class="odd">
+<td><code>aw</code></td>
+<td>选择当前单词</td>
+</tr>
+<tr class="even">
+<td><code>ab</code></td>
+<td>选择被 <code>()</code> 包裹的区域 (含括号)</td>
+</tr>
+<tr class="odd">
+<td><code>aB</code></td>
+<td>选择被 <code>{}</code> 包裹的区域 (含括号)</td>
+</tr>
+<tr class="even">
+<td><code>at</code></td>
+<td>选择被 <code>&lt;&gt;</code> 包裹的区域 (含括号)</td>
+</tr>
+<tr class="odd">
+<td><strong><code>ib</code></strong></td>
+<td><strong>选择被 <code>()</code> 包裹的区域 (无括号)</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>iB</code></strong></td>
+<td><strong>选择被 <code>{}</code> 包裹的区域 (无括号)</strong></td>
+</tr>
+<tr class="odd">
+<td><code>it</code></td>
+<td>选择被 <code>&lt;&gt;</code> 包裹的区域 (无括号)</td>
+</tr>
+<tr class="even">
+<td><code>y</code></td>
+<td>复制</td>
+</tr>
+<tr class="odd">
+<td><code>d</code></td>
+<td>剪切</td>
+</tr>
+<tr class="even">
+<td><code>~</code></td>
+<td>互换大小写</td>
+</tr>
+<tr class="odd">
+<td><code>u</code></td>
+<td>切换小写</td>
+</tr>
+<tr class="even">
+<td><code>U</code></td>
+<td>切换大写</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>多文件</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>:e filename</code></strong></td>
+<td><strong>打开 <code>filename</code></strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>:bn</code></strong></td>
+<td><strong>下一个缓冲区</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>:bp</code></strong></td>
+<td><strong>上一个缓冲区</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>:bd</code></strong></td>
+<td><strong>关闭缓冲区</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-right&gt;</code></strong></td>
+<td>* <strong>下一个缓冲区</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;C-left&gt;</code></strong></td>
+<td>* <strong>上一个缓冲区</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-down&gt;</code></strong></td>
+<td>* <strong>关闭缓冲区</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;C-w&gt;s</code></strong></td>
+<td><strong>水平分割窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-w&gt;v</code></strong></td>
+<td><strong>垂直分割窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;C-w&gt;w</code></strong></td>
+<td><strong>切换窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-w&gt;k</code></strong></td>
+<td><strong>切换到上窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;C-w&gt;j</code></strong></td>
+<td><strong>切换到下窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;C-w&gt;h</code></strong></td>
+<td><strong>切换到左窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;C-w&gt;l</code></strong></td>
+<td><strong>切换到右窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;k</code></strong></td>
+<td>* <strong>向上创建窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;j</code></strong></td>
+<td>* <strong>向下创建窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;h</code></strong></td>
+<td>* <strong>向左创建窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;l</code></strong></td>
+<td>* <strong>向右创建窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-k&gt;</code></strong></td>
+<td>* <strong>移动光标至上方窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-j&gt;</code></strong></td>
+<td>* <strong>移动光标至下方窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-h&gt;</code></strong></td>
+<td>* <strong>移动光标至左方窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-l&gt;</code></strong></td>
+<td>* <strong>移动光标至右方窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-k&gt;</code></strong></td>
+<td>* <strong>移动光标至上方窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-j&gt;</code></strong></td>
+<td>* <strong>移动光标至下方窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-h&gt;</code></strong></td>
+<td>* <strong>移动光标至左方窗口</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-l&gt;</code></strong></td>
+<td>* <strong>移动光标至右方窗口</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-K&gt;</code></strong></td>
+<td>* <strong>向上移动窗口分割线</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-J&gt;</code></strong></td>
+<td>* <strong>向下移动窗口分割线</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;M-H&gt;</code></strong></td>
+<td>* <strong>向左移动窗口分割线</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-L&gt;</code></strong></td>
+<td>* <strong>向右移动窗口分割线</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;tn</code></strong></td>
+<td>* <strong>新建标签</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;tc</code></strong></td>
+<td>* <strong>删除标签</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;tl</code></strong></td>
+<td>* <strong>向后切换标签</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;th</code></strong></td>
+<td>* <strong>向前切换标签</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;tt</code></strong></td>
+<td>* <strong>将窗口转为标签</strong></td>
+</tr>
+</tbody>
+</table></li>
+<li><p>查找与替换</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>/pattern</code></strong></td>
+<td><strong>查找 <code>pattern</code></strong></td>
+</tr>
+<tr class="even">
+<td><code>?pattern</code></td>
+<td>向上查找 <code>pattern</code></td>
+</tr>
+<tr class="odd">
+<td><code>\pattern</code></td>
+<td>正则查找 <code>pattern</code></td>
+</tr>
+<tr class="even">
+<td><strong><code>n</code></strong></td>
+<td><strong>查找下一个</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>N</code></strong></td>
+<td><strong>查找上一个</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>:%s/old/new/g</code></strong></td>
+<td><strong>替换全部</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>:%s/old/new/gc</code></strong></td>
+<td><strong>逐个替换</strong></td>
+</tr>
+</tbody>
+</table></li>
+<li><p> LeaderF</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;ff</code></strong></td>
+<td>* <strong>搜索当前目录下的文件</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;fb</code></strong></td>
+<td>* <strong>搜索当前的 Buffer</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;fl</code></strong></td>
+<td>* <strong>搜索当前文件中有的某个单词</strong></td>
+</tr>
+<tr class="even">
+<td><code>&lt;leader&gt;fm</code></td>
+<td>* 搜索最近使用过的文件</td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;fc</code></strong></td>
+<td>* <strong>搜索当前文件的函数</strong></td>
+</tr>
+<tr class="even">
+<td><code>&lt;Tab&gt;</code></td>
+<td>在检索模式和选择模式之间切换</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-r&gt;</code></td>
+<td>在模糊匹配和正则式匹配之间切换</td>
+</tr>
+<tr class="even">
+<td><code>&lt;C-f&gt;</code></td>
+<td>在全路径搜索和名字搜索之间切换</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;C-p&gt;</code></td>
+<td>预览结果</td>
+</tr>
+</tbody>
+</table></li>
+<li><p> NERDCommenter</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;cc</code></strong></td>
+<td>* <strong>注释当前选择的行或文本</strong></td>
+</tr>
+<tr class="even">
+<td><code>&lt;leader&gt;cf</code></td>
+<td>* 同 <code>&lt;leader&gt;cc</code> ，强制嵌套</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;leader&gt;cs</code></td>
+<td>* 用块格式注释</td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;leader&gt;c&lt;space&gt;</code></strong></td>
+<td>* <strong>切换注释状态</strong></td>
+</tr>
+<tr class="odd">
+<td><strong><code>&lt;leader&gt;cu</code></strong></td>
+<td>* <strong>取消注释</strong></td>
+</tr>
+</tbody>
+</table></li>
+<li><p> hop</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>&lt;M-/&gt;</code></strong></td>
+<td>* <strong>字符跳转 (Char1 模式)</strong></td>
+</tr>
+<tr class="even">
+<td><strong><code>&lt;M-?&gt;</code></strong></td>
+<td>* <strong>字符跳转 (Word 模式)</strong></td>
+</tr>
+</tbody>
+</table></li>
+<li><p> 其他</p>
+<table>
+<thead>
+<tr class="header">
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>ff</code></strong></td>
+<td><strong>打开文件管理器</strong></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<p>TODO: 寄存器</p>
+<h3 id="参考文章">参考文章</h3>
+<p>https://vim.rtorr.com/lang/zh_cn</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Chris Li
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.jungh.xyz/posts/8333ac79/" title="neovim 的自定义：安装与键位备忘">https://www.jungh.xyz/posts/8333ac79/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
+              <a href="/tags/neovim/" rel="tag"><i class="fa fa-tag"></i> neovim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/e7d4f75/" rel="prev" title="相机模型与标定笔记">
+                  <i class="fa fa-chevron-left"></i> 相机模型与标定笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Li</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">29 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-100" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.jungh.xyz/posts/8333ac79/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"35e9e4d4aad1336b86b704bce6142eed"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
