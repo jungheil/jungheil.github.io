@@ -2,59 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.liron.live/categories/index.html</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/tags/index.html</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/posts/16107/</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/posts/9882/</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/posts/45726/</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/posts/46122/</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.liron.live/posts/502aa6b7/</loc>
-    
-    <lastmod>2022-02-23</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.liron.live/posts/8530/</loc>
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -62,6 +15,8 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -69,6 +24,26 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/categories/index.html</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/tags/index.html</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -76,6 +51,8 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -83,6 +60,53 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/posts/16107/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/posts/9882/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/posts/45726/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/posts/46122/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liron.live/posts/502aa6b7/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -90,6 +114,8 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
@@ -97,6 +123,8 @@
     
     <lastmod>2022-02-23</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
 
