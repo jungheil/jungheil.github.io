@@ -2946,6 +2946,9 @@ mjx-container[display='true'] + br {
 .posts-expand .post-title {
   font-weight: bolder;
 }
+.table-container .header {
+  opacity: 1 !important;
+}
 abbr[title] {
   text-decoration: none; /* 2 */
   text-decoration: none; /* 2 */
