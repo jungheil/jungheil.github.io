@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CMerriweather:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.aimoyu.tech","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="普林斯顿大学算法课程的ppt。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="普林斯顿大学算法第一部分">
+<meta property="og:url" content="https://www.aimoyu.tech/posts/1e64ea0e/index.html">
+<meta property="og:site_name" content="AIMoyu">
+<meta property="og:description" content="普林斯顿大学算法课程的ppt。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%201.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%202.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%203.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%204.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%205.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%206.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%207.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%208.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%209.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%2010.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%2011.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled%2012.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202162117614.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202162930889.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202163017159.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202163402199.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202163604993.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202163835647.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202164256480.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202164322328.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203000329052.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203204731199.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202170607464.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202170726228.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202171213713.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202171454934.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202172427331.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202172445321.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202172519497.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202224651579.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202225029843.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202225154257.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202225215162.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202230253866.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202230431540.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202230634507.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202230726440.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202231824439.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202231911010.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202232018404.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202233118960.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202232441365.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202232636127.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202232909946.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202233020483.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202235906782.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211202235950563.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203000814682.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203000952586.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203000914548.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203001153937.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203002033933.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203193223299.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203193541948.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203195130182.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203195212179.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203195248501.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203195629792.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203200955694.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203203401559.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203201017612.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203201824853.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203202552732.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203202641697.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203203211443.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203203300032.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203204242960.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203204645526.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211204003821156.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203233459296.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203233727084.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203233813284.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203235000143.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203235040809.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203235200022.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203235324192.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211203235426256.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211212184837937.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20211212185046094.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926123353216.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926123730615.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926124150541.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125026950.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125101190.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125129935.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125219834.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125508278.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926125543012.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926123828411.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926131541098.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132043575.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132206184.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132324553.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132344007.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132411904.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926132541204.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151236026.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151539680.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151634311.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151732206.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151746431.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151759266.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151845637.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151858743.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151908383.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151929745.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151944111.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926151954953.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926152244170.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926152420871.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926152519770.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/image-20220926152717821.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664254650448.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664254773321.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664254963465.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664453671625.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664255494991.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664255540222.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664255657703.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664256021977.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664256135494.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664257233198.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664257298366.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664257523751.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664257663004.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664452720484.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664452760980.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664452921481.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664452964320.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664453201119.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664453459724.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664453507299.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664453614919.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454080690.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454145911.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454357261.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454550102.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454595670.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454644486.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664454726971.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455063921.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455183290.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455211599.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455234515.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455659998.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455708875.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455680207.png">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/1e64ea0e/1664455733947.png">
+<meta property="article:published_time" content="2021-09-29T11:56:26.000Z">
+<meta property="article:modified_time" content="2022-09-29T14:09:05.145Z">
+<meta property="article:author" content="默于">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.aimoyu.tech/posts/1e64ea0e/Untitled.png">
+
+
+<link rel="canonical" href="https://www.aimoyu.tech/posts/1e64ea0e/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.aimoyu.tech/posts/1e64ea0e/","path":"posts/1e64ea0e/","title":"普林斯顿大学算法第一部分"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>普林斯顿大学算法第一部分 | AIMoyu</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AIMoyu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是菜狗默于的上班摸鱼日常！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#binary-search"><span class="nav-number">1.</span> <span class="nav-text">binary search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-connectivity"><span class="nav-number">2.</span> <span class="nav-text">Dynamic Connectivity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#quick-find"><span class="nav-number">2.1.</span> <span class="nav-text">Quick Find</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quick-union"><span class="nav-number">2.2.</span> <span class="nav-text">Quick Union</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B-weighted-quick-union"><span class="nav-number">2.2.1.</span> <span class="nav-text">改进 Weighted Quick Union</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fundamental-data-type"><span class="nav-number">3.</span> <span class="nav-text">Fundamental Data Type</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">3.1.</span> <span class="nav-text">stack</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#linked-list-implementation"><span class="nav-number">3.1.1.</span> <span class="nav-text">linked-list implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#array-implementation"><span class="nav-number">3.1.2.</span> <span class="nav-text">array implementation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#resizing-arrays"><span class="nav-number">3.2.</span> <span class="nav-text">Resizing Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#grow-array"><span class="nav-number">3.2.1.</span> <span class="nav-text">Grow array</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shink-arrays"><span class="nav-number">3.2.2.</span> <span class="nav-text">shink arrays</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#resizing-array-vs.-linked-list"><span class="nav-number">3.2.3.</span> <span class="nav-text">Resizing array vs. linked list</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#queues"><span class="nav-number">3.3.</span> <span class="nav-text">Queues</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#linked-list-implementation-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">linked-list implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#array-implementation-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">array implementation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorting"><span class="nav-number">4.</span> <span class="nav-text">Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sorting-complexity"><span class="nav-number">4.1.</span> <span class="nav-text">Sorting Complexity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stability"><span class="nav-number">4.2.</span> <span class="nav-text">Stability</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#selection-sort"><span class="nav-number">4.3.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#insertion-sort"><span class="nav-number">4.4.</span> <span class="nav-text">Insertion Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#partially-sorted-arrays"><span class="nav-number">4.4.1.</span> <span class="nav-text">Partially-sorted arrays</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shell-sort"><span class="nav-number">4.5.</span> <span class="nav-text">Shell Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shuffling"><span class="nav-number">4.6.</span> <span class="nav-text">Shuffling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#merge-sort"><span class="nav-number">4.7.</span> <span class="nav-text">Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#improvement"><span class="nav-number">4.7.1.</span> <span class="nav-text">improvement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bottom-up-mergesort"><span class="nav-number">4.7.2.</span> <span class="nav-text">Bottom-up Mergesort</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quick-sort"><span class="nav-number">4.8.</span> <span class="nav-text">Quick Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quick-select"><span class="nav-number">4.9.</span> <span class="nav-text">Quick-select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#duplicate-keys"><span class="nav-number">4.10.</span> <span class="nav-text">Duplicate keys</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priority-queue"><span class="nav-number">5.</span> <span class="nav-text">Priority Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#binary-heaps"><span class="nav-number">5.1.</span> <span class="nav-text">Binary Heaps</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#swim"><span class="nav-number">5.1.1.</span> <span class="nav-text">swim</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insert"><span class="nav-number">5.1.2.</span> <span class="nav-text">insert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sink"><span class="nav-number">5.1.3.</span> <span class="nav-text">sink</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#delete"><span class="nav-number">5.1.4.</span> <span class="nav-text">delete</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#heap-sort"><span class="nav-number">5.2.</span> <span class="nav-text">Heap Sort</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#symbol-tables"><span class="nav-number">6.</span> <span class="nav-text">Symbol Tables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#binary-search-tree-bst"><span class="nav-number">6.1.</span> <span class="nav-text">Binary Search Tree (BST)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">6.1.1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insert-1"><span class="nav-number">6.1.2.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#floor"><span class="nav-number">6.1.3.</span> <span class="nav-text">Floor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#subtree-count"><span class="nav-number">6.1.4.</span> <span class="nav-text">subtree count</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rank"><span class="nav-number">6.1.5.</span> <span class="nav-text">Rank</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#inorder-traversal"><span class="nav-number">6.1.6.</span> <span class="nav-text">Inorder traversal</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#deletion"><span class="nav-number">6.1.7.</span> <span class="nav-text">Deletion</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#summary"><span class="nav-number">6.1.8.</span> <span class="nav-text">Summary</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#balance-search-tree"><span class="nav-number">7.</span> <span class="nav-text">Balance Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#search-tree"><span class="nav-number">7.1.</span> <span class="nav-text">2-3 Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#insert-2"><span class="nav-number">7.1.1.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#performance"><span class="nav-number">7.1.2.</span> <span class="nav-text">Performance</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#red-black-tree"><span class="nav-number">7.2.</span> <span class="nav-text">Red-black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search-1"><span class="nav-number">7.2.1.</span> <span class="nav-text">search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#representation"><span class="nav-number">7.2.2.</span> <span class="nav-text">Representation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#operations"><span class="nav-number">7.2.3.</span> <span class="nav-text">Operations</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">7.2.4.</span> <span class="nav-text">Strategy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#implementation"><span class="nav-number">7.2.5.</span> <span class="nav-text">Implementation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-trees"><span class="nav-number">7.3.</span> <span class="nav-text">B-trees</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search-2"><span class="nav-number">7.3.1.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insertion"><span class="nav-number">7.3.2.</span> <span class="nav-text">Insertion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geometric-appliations-of-bsts"><span class="nav-number">8.</span> <span class="nav-text">Geometric Appliations of BSTs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#d-range-search"><span class="nav-number">8.1.</span> <span class="nav-text">1d range search</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#task"><span class="nav-number">8.1.1.</span> <span class="nav-text">Task</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#goal"><span class="nav-number">8.1.2.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bst-implementation"><span class="nav-number">8.1.3.</span> <span class="nav-text">BST implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#line-segment-intersection"><span class="nav-number">8.1.4.</span> <span class="nav-text">Line segment intersection</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kd-trees"><span class="nav-number">8.2.</span> <span class="nav-text">KD-Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#d-orthogonal-range-search"><span class="nav-number">8.2.1.</span> <span class="nav-text">2-d orthogonal range search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#implementation-1"><span class="nav-number">8.2.2.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#range-search"><span class="nav-number">8.2.3.</span> <span class="nav-text">Range search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nearest-neighbor-search"><span class="nav-number">8.2.4.</span> <span class="nav-text">Nearest neighbor search</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#interval-search-trees"><span class="nav-number">8.3.</span> <span class="nav-text">Interval search trees</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#d-interval-search"><span class="nav-number">8.3.1.</span> <span class="nav-text">1d interval search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insert-3"><span class="nav-number">8.3.2.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#search-3"><span class="nav-number">8.3.3.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#inplementation"><span class="nav-number">8.3.4.</span> <span class="nav-text">Inplementation</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rectangle-intersection"><span class="nav-number">8.4.</span> <span class="nav-text">Rectangle Intersection</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash-table"><span class="nav-number">9.</span> <span class="nav-text">Hash table</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hash-function"><span class="nav-number">9.1.</span> <span class="nav-text">Hash function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#separate-chaining"><span class="nav-number">9.2.</span> <span class="nav-text">Separate Chaining</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#implementation-2"><span class="nav-number">9.2.1.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#analysis"><span class="nav-number">9.2.2.</span> <span class="nav-text">Analysis</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#linear-probing"><span class="nav-number">9.3.</span> <span class="nav-text">Linear Probing</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#impletementation"><span class="nav-number">9.3.1.</span> <span class="nav-text">Impletementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#analysis-1"><span class="nav-number">9.3.2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#context"><span class="nav-number">9.3.3.</span> <span class="nav-text">Context</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="默于"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">默于</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:jungheilai@gmail.com" title="E-Mail → mailto:jungheilai@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aimoyu.tech/posts/1e64ea0e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="默于">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AIMoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="普林斯顿大学算法第一部分 | AIMoyu">
+      <meta itemprop="description" content="普林斯顿大学算法课程的ppt。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          普林斯顿大学算法第一部分
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-29 19:56:26" itemprop="dateCreated datePublished" datetime="2021-09-29T19:56:26+08:00">2021-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-29 22:09:05" itemprop="dateModified" datetime="2022-09-29T22:09:05+08:00">2022-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">普林斯顿大学算法课程的ppt。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <figure>
+<img data-src="/posts/1e64ea0e/Untitled.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%201.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%202.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<h3 id="binary-search">binary search</h3>
+<p>recurrence：</p>
+<p><span class="math display">\[
+\begin{aligned}
+T(N)&amp;\leq T(\frac N2)+1\\
+&amp;\leq T(\frac N4)+1+1\\
+&amp;...\\
+&amp;\leq T(\frac NN) +1+...+1\\
+&amp;=1+\log(N)
+\end{aligned}
+\]</span></p>
+<p>二分查找解决 3-SUM 问题：</p>
+<p>遍历前两个数，查找第三个能让和为 0 的数，复杂度为 N^2logN</p>
+<h3 id="dynamic-connectivity">Dynamic Connectivity</h3>
+<h4 id="quick-find">Quick Find</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%203.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p>union 时需要遍历整个 array，改变 id</p>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%204.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p><span class="math inline">\(N^2\)</span> 的复杂度是不能容忍的（当算力和数据量同时增长一倍，耗时也会增长一倍）</p>
+<p>分析：</p>
+<ul>
+<li>find () 操作的时间复杂度为𝑂(1)，因为只需要访问一次 id 数组</li>
+<li> union () 操作的时间复杂度为𝑂(𝑁)，因为每一个合并都需要遍历整个 id 数组</li>
+<li>如果有 M 对连接𝑂(𝑀𝑁)，那么构建出所有的分量的时间复杂度为。</li>
+</ul>
+<h4 id="quick-union">Quick Union</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%205.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p>只改变两个需要链接节点的根节点</p>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%206.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%207.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p>时快时慢，当树很深的时候，会导致 find 变慢，而每一次 union 都需要 find。</p>
+<p>分析：</p>
+<ul>
+<li>最好情况下，find () 操作的时间复杂度是𝑂(1)，最坏情况下，find () 操作的时间复杂度是𝑂(𝑁)</li>
+<li>union () 操作的时间复杂度应该与 find () 操作是一致的。</li>
+</ul>
+<h5 id="改进-weighted-quick-union">改进 Weighted Quick Union</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%208.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p>永远将小树的根节点添加到大树的根节点上（大小指的是深度）</p>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%209.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%2010.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<p>为什么是<span class="math inline"> \(\log(N)\)</span>?</p>
+<p>思考 N 个节点时最多有多少层？</p>
+<table>
+<thead>
+<tr class="header">
+<th>节点数量</th>
+<th>高度</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td> 1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>2^k=n</td>
+<td>k</td>
+</tr>
+</tbody>
+</table>
+<p>如需要扩展到第三层，就需要两个相同的最小的两层结构，即 4*4=8</p>
+<p>log 基数为 2</p>
+<p>path compression（在寻找 root 节点时做压缩）</p>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%2011.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/Untitled%2012.png" alt="Untitled"><figcaption>Untitled</figcaption>
+</figure>
+<h3 id="fundamental-data-type">Fundamental Data Type</h3>
+<h4 id="stack">stack</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202162117614.png" alt="image-20211202162117614"><figcaption>image-20211202162117614</figcaption>
+</figure>
+<h5 id="linked-list-implementation">linked-list implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202162930889.png" alt="image-20211202162930889"><figcaption>image-20211202162930889</figcaption>
+</figure>
+<h5 id="array-implementation">array implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202163017159.png" alt="image-20211202163017159"><figcaption>image-20211202163017159</figcaption>
+</figure>
+<h4 id="resizing-arrays">Resizing Arrays</h4>
+<h5 id="grow-array">Grow array</h5>
+<p>单个扩容和两倍扩容的对比：</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202163402199.png" alt="image-20211202163402199"><figcaption>image-20211202163402199</figcaption>
+</figure>
+<h5 id="shink-arrays">shink arrays</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202163604993.png" alt="image-20211202163604993"><figcaption>image-20211202163604993</figcaption>
+</figure>
+<h5 id="resizing-array-vs.-linked-list">Resizing array vs. linked list</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202163835647.png" alt="image-20211202163835647"><figcaption>image-20211202163835647</figcaption>
+</figure>
+<h4 id="queues">Queues</h4>
+<h5 id="linked-list-implementation-1">linked-list implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202164256480.png" alt="image-20211202164256480"><figcaption>image-20211202164256480</figcaption>
+</figure>
+<h5 id="array-implementation-1">array implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202164322328.png" alt="image-20211202164322328"><figcaption>image-20211202164322328</figcaption>
+</figure>
+<h3 id="sorting">Sorting</h3>
+<h4 id="sorting-complexity">Sorting Complexity</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203000329052.png" alt="image-20211203000329052"><figcaption>image-20211203000329052</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203204731199.png" alt="image-20211203204731199"><figcaption>image-20211203204731199</figcaption>
+</figure>
+<h4 id="stability">Stability</h4>
+<p>不打乱原有顺序</p>
+<h4 id="selection-sort">Selection Sort</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202170607464.png" alt="image-20211202170607464"><figcaption>image-20211202170607464</figcaption>
+</figure>
+<p>遍历 i，寻找后续最小的元素并交换</p>
+<p>implementation:</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202170726228.png" alt="image-20211202170726228"><figcaption>image-20211202170726228</figcaption>
+</figure>
+<p>复杂度：</p>
+<p>比较次数：<span class="math inline">\((N-1)+(N-2)+...+1+0\;\sim\;\frac{N^2}2\)</span></p>
+<p>交换次数：<span class="math inline">\(N\)</span></p>
+<h4 id="insertion-sort">Insertion Sort</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202171213713.png" alt="image-20211202171213713"><figcaption>image-20211202171213713</figcaption>
+</figure>
+<p>迭代 i，当 i 小于前一个元素时交换，交换后继续判断与前一个元素的大小，如果小于，则继续交换，直到大于为止。</p>
+<p>implementaion</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202171454934.png" alt="image-20211202171454934"><figcaption>image-20211202171454934</figcaption>
+</figure>
+<p><strong>复杂度（平均）：</strong></p>
+<p>比较次数：<span class="math inline">\(\frac14N^2\)</span></p>
+<p>交换次数：<span class="math inline">\(\frac14N^2\)</span></p>
+<p><strong>Best case (排好序):</strong></p>
+<p>Compares: <span class="math inline">\(N-1\)</span></p>
+<p>Exchanges: <span class="math inline">\(0\)</span></p>
+<p><strong>Worst case (倒序):</strong></p>
+<p>Compares: <span class="math inline">\(\frac12N^2\)</span></p>
+<p>Exchanges: <span class="math inline">\(\frac12N^2\)</span></p>
+<h5 id="partially-sorted-arrays">Partially-sorted arrays</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202172427331.png" alt="image-20211202172427331"><figcaption>image-20211202172427331</figcaption>
+</figure>
+<p>Insertion sort 在 Partially-sorted arrays 中时间复杂度是线性的</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202172445321.png" alt="image-20211202172445321"><figcaption>image-20211202172445321</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202172519497.png" alt="image-20211202172519497"><figcaption>image-20211202172519497</figcaption>
+</figure>
+<h4 id="shell-sort">Shell Sort</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202224651579.png" alt="image-20211202224651579"><figcaption>image-20211202224651579</figcaption>
+</figure>
+<p>insertion sort with stride length h.</p>
+<p>Why insertion sort?</p>
+<p>Big increments -&gt; small subarray -&gt; nearly in order</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202225029843.png" alt="image-20211202225029843"><figcaption>image-20211202225029843</figcaption>
+</figure>
+<p>implementation</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202225154257.png" alt="image-20211202225154257"><figcaption>image-20211202225154257</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202225215162.png" alt="image-20211202225215162"><figcaption>image-20211202225215162</figcaption>
+</figure>
+<p>vworst-case:</p>
+<p>Compares used: <span class="math inline">\(O(N^{\frac32})\)</span> (With 3x+1 increments)</p>
+<p>Property:</p>
+<p>No accurate model. Maybe $N lg N $</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202230253866.png" alt="image-20211202230253866"><figcaption>image-20211202230253866</figcaption>
+</figure>
+<h4 id="shuffling">Shuffling</h4>
+<p>Shuffle sort:</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202230431540.png" alt="image-20211202230431540"><figcaption>image-20211202230431540</figcaption>
+</figure>
+<p>Knuth Shuffle:</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202230634507.png" alt="image-20211202230634507"><figcaption>image-20211202230634507</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202230726440.png" alt="image-20211202230726440"><figcaption>image-20211202230726440</figcaption>
+</figure>
+<h4 id="merge-sort">Merge Sort</h4>
+<p>分治，递归</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202231824439.png" alt="image-20211202231824439"><figcaption>image-20211202231824439</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202231911010.png" alt="image-20211202231911010"><figcaption>image-20211202231911010</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202232018404.png" alt="image-20211202232018404"><figcaption>image-20211202232018404</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202233118960.png" alt="image-20211202233118960"><figcaption>image-20211202233118960</figcaption>
+</figure>
+<p>worst case:</p>
+<p>Compares: <span class="math inline">\(NlgN\)</span></p>
+<p>Array accesses: <span class="math inline">\(6NlgN\)</span></p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202232441365.png" alt="image-20211202232441365"><figcaption>image-20211202232441365</figcaption>
+</figure>
+<p>递归次数：</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202232636127.png" alt="image-20211202232636127"><figcaption>image-20211202232636127</figcaption>
+</figure>
+<p>memory: Extra space proportional to N</p>
+<h5 id="improvement">improvement</h5>
+<p>The cutoff to insertion sort for 7 items.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202232909946.png" alt="image-20211202232909946"><figcaption>image-20211202232909946</figcaption>
+</figure>
+<p>stop merge if already sorted</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202233020483.png" alt="image-20211202233020483"><figcaption>image-20211202233020483</figcaption>
+</figure>
+<h5 id="bottom-up-mergesort">Bottom-up Mergesort</h5>
+<p>No Recursion Needed!</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202235906782.png" alt="image-20211202235906782"><figcaption>image-20211202235906782</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211202235950563.png" alt="image-20211202235950563"><figcaption>image-20211202235950563</figcaption>
+</figure>
+<h4 id="quick-sort">Quick Sort</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203000814682.png" alt="image-20211203000814682"><figcaption>image-20211203000814682</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203000952586.png" alt="image-20211203000952586"><figcaption>image-20211203000952586</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203000914548.png" alt="image-20211203000914548"><figcaption>image-20211203000914548</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203001153937.png" alt="image-20211203001153937"><figcaption>image-20211203001153937</figcaption>
+</figure>
+<p><strong>Shuffling is needed for performance guarantee</strong></p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203002033933.png" alt="image-20211203002033933"><figcaption>image-20211203002033933</figcaption>
+</figure>
+<p>best case: <span class="math inline">\(NlgN\)</span></p>
+<p>Worst case: <span class="math inline">\(\frac12 N^2\)</span></p>
+<h4 id="quick-select">Quick-select</h4>
+<p>Given an array of N items, find a <span class="math inline">\(k^{th}\)</span> smallest item.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203193223299.png" alt="image-20211203193223299"><figcaption>image-20211203193223299</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203193541948.png" alt="image-20211203193541948"><figcaption>image-20211203193541948</figcaption>
+</figure>
+<h4 id="duplicate-keys">Duplicate keys</h4>
+<p>Mergesort with DUPLICATE KEYS. Always between <span class="math inline">\(\frac12NlgN\)</span> and <span class="math inline">\(NlgN\)</span> compares.</p>
+<p>Quicksort with DUPLICATE KEYS. goes <strong>quadratic</strong>.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203195130182.png" alt="image-20211203195130182"><figcaption>image-20211203195130182</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203195212179.png" alt="image-20211203195212179"><figcaption>image-20211203195212179</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203195248501.png" alt="image-20211203195248501"><figcaption>image-20211203195248501</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203195629792.png" alt="image-20211203195629792"><figcaption>image-20211203195629792</figcaption>
+</figure>
+<h3 id="priority-queue">Priority Queue</h3>
+<p>Find the largest M items in a stream of N items.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203200955694.png" alt="image-20211203200955694"><figcaption>image-20211203200955694</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203203401559.png" alt="image-20211203203401559"><figcaption>image-20211203203401559</figcaption>
+</figure>
+<p>Unorder array implementation</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203201017612.png" alt="image-20211203201017612"><figcaption>image-20211203201017612</figcaption>
+</figure>
+<h4 id="binary-heaps">Binary Heaps</h4>
+<p>Array representation of a heap-ordered complete binary tree.</p>
+<ul>
+<li>keys in nodes.</li>
+<li>Parent’s no smaller than children’s keys.</li>
+</ul>
+<p>Array representation:</p>
+<ul>
+<li>indices start at 1.</li>
+<li>Take nodes in level order.</li>
+<li>No explicit links needed!</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203201824853.png" alt="image-20211203201824853"><figcaption>image-20211203201824853</figcaption>
+</figure>
+<p>Root: a[1]</p>
+<p>Parent of node at k: k/2</p>
+<p>Children of node at k: 2k and 2k+1</p>
+<p>Minimum-oriented priority queue: Replace less() with greater().</p>
+<h5 id="swim">swim</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203202552732.png" alt="image-20211203202552732"><figcaption>image-20211203202552732</figcaption>
+</figure>
+<h5 id="insert">insert</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203202641697.png" alt="image-20211203202641697"><figcaption>image-20211203202641697</figcaption>
+</figure>
+<h5 id="sink">sink</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203203211443.png" alt="image-20211203203211443"><figcaption>image-20211203203211443</figcaption>
+</figure>
+<h5 id="delete">delete</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203203300032.png" alt="image-20211203203300032"><figcaption>image-20211203203300032</figcaption>
+</figure>
+<h4 id="heap-sort">Heap Sort</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203204242960.png" alt="image-20211203204242960"><figcaption>image-20211203204242960</figcaption>
+</figure>
+<ol type="1">
+<li> 从倒数第二排向上从右到左做 sink，构造二叉树。</li>
+<li>依次取出最大值。</li>
+</ol>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203204645526.png" alt="image-20211203204645526"><figcaption>image-20211203204645526</figcaption>
+</figure>
+<h3 id="symbol-tables">Symbol Tables</h3>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211204003821156.png" alt="image-20211204003821156"><figcaption>image-20211204003821156</figcaption>
+</figure>
+<p>Sequential Search (unordered list):</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203233459296.png" alt="image-20211203233459296"><figcaption>image-20211203233459296</figcaption>
+</figure>
+<p>Binary Search (order list)</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203233727084.png" alt="image-20211203233727084"><figcaption>image-20211203233727084</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203233813284.png" alt="image-20211203233813284"><figcaption>image-20211203233813284</figcaption>
+</figure>
+<h4 id="binary-search-tree-bst">Binary Search Tree (BST)</h4>
+<ul>
+<li>Larger than all keys in its left subtree</li>
+<li>Smaller than all keys in its right subtree</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203235000143.png" alt="image-20211203235000143"><figcaption>image-20211203235000143</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203235040809.png" alt="image-20211203235040809"><figcaption>image-20211203235040809</figcaption>
+</figure>
+<h5 id="search">Search</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203235200022.png" alt="image-20211203235200022"><figcaption>image-20211203235200022</figcaption>
+</figure>
+<h5 id="insert-1">Insert</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203235324192.png" alt="image-20211203235324192"><figcaption>image-20211203235324192</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211203235426256.png" alt="image-20211203235426256"><figcaption>image-20211203235426256</figcaption>
+</figure>
+<h5 id="floor">Floor</h5>
+<p>Largest key less to a given key.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211212184837937.png" alt="image-20211212184837937"><figcaption>image-20211212184837937</figcaption>
+</figure>
+<h5 id="subtree-count">subtree count</h5>
+<p>In each node, we store the number of nodes in the subtree rooted at that node;</p>
+<p>remark. This facilitates efficient implementation of <code>rank()</code> and <code>select()</code></p>
+<p>implementation:</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20211212185046094.png" alt="image-20211212185046094"><figcaption>image-20211212185046094</figcaption>
+</figure>
+<h5 id="rank">Rank</h5>
+<p>How much keys &lt; <span class="math inline">\(k\)</span></p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926123353216.png" alt="image-20220926123353216"><figcaption>image-20220926123353216</figcaption>
+</figure>
+<h5 id="inorder-traversal">Inorder traversal</h5>
+<p>from small to large</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926123730615.png" alt="image-20220926123730615"><figcaption>image-20220926123730615</figcaption>
+</figure>
+<h5 id="deletion">Deletion</h5>
+<ul>
+<li><p>Lazy approach (Tombstone)</p>
+<img data-src="/posts/1e64ea0e/image-20220926124150541.png" alt="image-20220926124150541"></li>
+<li><p>Hibbard deletion</p>
+<ul>
+<li><p>case 0: 0 children</p>
+<img data-src="/posts/1e64ea0e/image-20220926125026950.png" alt="image-20220926125026950"></li>
+<li><p>case 1: 1 child</p>
+<img data-src="/posts/1e64ea0e/image-20220926125101190.png" alt="image-20220926125101190"></li>
+<li><p>case 2: 2 children</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926125129935.png" alt="image-20220926125129935"><figcaption>image-20220926125129935</figcaption>
+</figure></li>
+</ul>
+<p>Implementation:</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926125219834.png" alt="image-20220926125219834"><figcaption>image-20220926125219834</figcaption>
+</figure>
+<p>NOT SYMMETRIC:</p>
+<p>Hibbard algorithm lack of symmetry that tends to lead to difficulties.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926125508278.png" alt="image-20220926125508278"><figcaption>image-20220926125508278</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926125543012.png" alt="image-20220926125543012"><figcaption>image-20220926125543012</figcaption>
+</figure></li>
+</ul>
+<h5 id="summary">Summary</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926123828411.png" alt="image-20220926123828411"><figcaption>image-20220926123828411</figcaption>
+</figure>
+<h3 id="balance-search-tree">Balance Search Tree</h3>
+<h4 id="search-tree">2-3 Search Tree</h4>
+<ul>
+<li><p>Perfect balance</p>
+Every path from root to null link has same length.</li>
+<li><p>Symmetric order</p>
+<p>inoder traversal yields keys in ascending order.</p></li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926131541098.png" alt="image-20220926131541098"><figcaption>image-20220926131541098</figcaption>
+</figure>
+<h5 id="insert-2">Insert</h5>
+<ul>
+<li><p>Insert into a 2-node at bottom</p>
+<ul>
+<li>Search for key.</li>
+<li>Replace 2-node with 3-node</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926132043575.png" alt="image-20220926132043575"><figcaption>image-20220926132043575</figcaption>
+</figure>
+<img data-src="/posts/1e64ea0e/image-20220926132206184.png" alt="image-20220926132206184"></li>
+<li><p>Insert into a 3-node at bottom</p>
+<ul>
+<li>Add new key to 3-node to create temporary 4-node</li>
+<li>Move middle key in 4-node into parent</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926132324553.png" alt="image-20220926132324553"><figcaption>image-20220926132324553</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926132344007.png" alt="image-20220926132344007"><figcaption>image-20220926132344007</figcaption>
+</figure>
+<img data-src="/posts/1e64ea0e/image-20220926132411904.png" alt="image-20220926132411904"></li>
+<li><p>Summary</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926132541204.png" alt="image-20220926132541204"><figcaption>image-20220926132541204</figcaption>
+</figure></li>
+</ul>
+<h5 id="performance">Performance</h5>
+<ul>
+<li>Worst case: <code>lg N</code></li>
+<li>Best case: <code>log3 N</code></li>
+</ul>
+<h4 id="red-black-tree">Red-black Tree</h4>
+<ul>
+<li>Represent 2-3 tree as a BST</li>
+<li>Use “internal” left-leaning links as “glue” for 3-nodes.</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151236026.png" alt="image-20220926151236026"><figcaption>image-20220926151236026</figcaption>
+</figure>
+<ul>
+<li>No node has two red links connected to it.</li>
+<li>Every path from root to null link has the same number of black links.</li>
+<li>Red links lean left.</li>
+</ul>
+<h5 id="search-1">search</h5>
+<p>Search is the same as for elementary BST (ignore color).</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151539680.png" alt="image-20220926151539680"><figcaption>image-20220926151539680</figcaption>
+</figure>
+<h5 id="representation">Representation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151634311.png" alt="image-20220926151634311"><figcaption>image-20220926151634311</figcaption>
+</figure>
+<h5 id="operations">Operations</h5>
+<ul>
+<li><p>Left rotation</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151732206.png" alt="image-20220926151732206"><figcaption>image-20220926151732206</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151746431.png" alt="image-20220926151746431"><figcaption>image-20220926151746431</figcaption>
+</figure>
+<img data-src="/posts/1e64ea0e/image-20220926151759266.png" alt="image-20220926151759266"></li>
+<li><p>Right rotation</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151845637.png" alt="image-20220926151845637"><figcaption>image-20220926151845637</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151858743.png" alt="image-20220926151858743"><figcaption>image-20220926151858743</figcaption>
+</figure>
+<img data-src="/posts/1e64ea0e/image-20220926151908383.png" alt="image-20220926151908383"></li>
+<li><p>Color flip</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151929745.png" alt="image-20220926151929745"><figcaption>image-20220926151929745</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151944111.png" alt="image-20220926151944111"><figcaption>image-20220926151944111</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926151954953.png" alt="image-20220926151954953"><figcaption>image-20220926151954953</figcaption>
+</figure></li>
+</ul>
+<h5 id="strategy">Strategy</h5>
+<ul>
+<li><p>Insert into a tree with exactly 1 node.</p>
+<img data-src="/posts/1e64ea0e/image-20220926152244170.png" alt="image-20220926152244170"></li>
+<li><p>Insert into a tree with exactly 2 nodes.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926152420871.png" alt="image-20220926152420871"><figcaption>image-20220926152420871</figcaption>
+</figure></li>
+</ul>
+<h5 id="implementation">Implementation</h5>
+<ul>
+<li>Right child red, left child black: <code>rotate left</code></li>
+<li>Left child, left-left grandchild red: <code>rotate right</code></li>
+<li>Both children red: <code>flip colors</code></li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926152519770.png" alt="image-20220926152519770"><figcaption>image-20220926152519770</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/image-20220926152717821.png" alt="image-20220926152717821"><figcaption>image-20220926152717821</figcaption>
+</figure>
+<h4 id="b-trees">B-trees</h4>
+<ul>
+<li>At least 2 key-link pairs in other nodes.</li>
+<li>At least M/2 key-link pairs in other nodes.</li>
+<li>External nodes contain client keys.</li>
+<li>Internal nodes contain copies of keys to guide search.</li>
+</ul>
+<blockquote>
+<p>我怎么觉得这是 B + 树（我也不懂啊）。。。</p>
+</blockquote>
+<figure>
+<img data-src="/posts/1e64ea0e/1664254650448.png" alt="1664254650448"><figcaption>1664254650448</figcaption>
+</figure>
+<h5 id="search-2">Search</h5>
+<ul>
+<li>Start at root.</li>
+<li>Find interval for search key and take corresponding link.</li>
+<li>Search terminates in external node.</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/1664254773321.png" alt="1664254773321"><figcaption>1664254773321</figcaption>
+</figure>
+<h5 id="insertion">Insertion</h5>
+<ul>
+<li>Search for new key.</li>
+<li>Insert at bottom.</li>
+<li>Split nodes with M key-link pairs on the way up the tree.</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/1664254963465.png" alt="1664254963465"><figcaption>1664254963465</figcaption>
+</figure>
+<h3 id="geometric-appliations-of-bsts">Geometric Appliations of BSTs</h3>
+<figure>
+<img data-src="/posts/1e64ea0e/1664453671625.png" alt="1664453671625"><figcaption>1664453671625</figcaption>
+</figure>
+<h4 id="d-range-search">1d range search</h4>
+<h5 id="task">Task</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664255494991.png" alt="1664255494991"><figcaption>1664255494991</figcaption>
+</figure>
+<h5 id="goal">Goal</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664255540222.png" alt="1664255540222"><figcaption>1664255540222</figcaption>
+</figure>
+<h5 id="bst-implementation">BST implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664255657703.png" alt="1664255657703"><figcaption>1664255657703</figcaption>
+</figure>
+<h5 id="line-segment-intersection">Line segment intersection</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664256021977.png" alt="1664256021977"><figcaption>1664256021977</figcaption>
+</figure>
+<h4 id="kd-trees">KD-Trees</h4>
+<h5 id="d-orthogonal-range-search">2-d orthogonal range search</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664256135494.png" alt="1664256135494"><figcaption>1664256135494</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664257233198.png" alt="1664257233198"><figcaption>1664257233198</figcaption>
+</figure>
+<h5 id="implementation-1">Implementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664257298366.png" alt="1664257298366"><figcaption>1664257298366</figcaption>
+</figure>
+<h5 id="range-search">Range search</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664257523751.png" alt="1664257523751"><figcaption>1664257523751</figcaption>
+</figure>
+<p>Typical case: <code>R + logN</code></p>
+<p>Worst case (assuming tree is balanced): <code>R + N^(1/2)</code></p>
+<h5 id="nearest-neighbor-search">Nearest neighbor search</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664257663004.png" alt="1664257663004"><figcaption>1664257663004</figcaption>
+</figure>
+<p>Typical case: <code>logN</code></p>
+<p>Worst case (even if tree is balanced): <code>N</code></p>
+<h4 id="interval-search-trees">Interval search trees</h4>
+<h5 id="d-interval-search">1d interval search</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664452720484.png" alt="1664452720484"><figcaption>1664452720484</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664452760980.png" alt="1664452760980"><figcaption>1664452760980</figcaption>
+</figure>
+<h5 id="insert-3">Insert</h5>
+<p>To insert an interval (<em>lo</em>, <em>hi</em>):</p>
+<ul>
+<li>Insert into BST, using <em>lo</em> as the key.</li>
+<li>Update max in each node on search path.</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/1664452921481.png" alt="1664452921481"><figcaption>1664452921481</figcaption>
+</figure>
+<h5 id="search-3">Search</h5>
+<p>To search for any one interval that intersects query interval (<em>lo</em>, <em>hi</em>):</p>
+<ul>
+<li>If interval in node intersects query interval, return it.</li>
+<li>Else if left subtrees is null, go right.</li>
+<li>Else if max endpoint in left subtrees is less than <em>lo</em>, go right.</li>
+<li>Else go left.</li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/1664452964320.png" alt="1664452964320"><figcaption>1664452964320</figcaption>
+</figure>
+<h5 id="inplementation">Inplementation</h5>
+<p>Use a RB BST to guarantee performance.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/1664453201119.png" alt="1664453201119"><figcaption>1664453201119</figcaption>
+</figure>
+<h4 id="rectangle-intersection">Rectangle Intersection</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/1664453459724.png" alt="1664453459724"><figcaption>1664453459724</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664453507299.png" alt="1664453507299"><figcaption>1664453507299</figcaption>
+</figure>
+<p>（x 维换到时间维度，转换到 1d 问题了？）</p>
+<figure>
+<img data-src="/posts/1e64ea0e/1664453614919.png" alt="1664453614919"><figcaption>1664453614919</figcaption>
+</figure>
+<h3 id="hash-table">Hash table</h3>
+<h4 id="hash-function">Hash function</h4>
+<p>Method for computing array index from key.</p>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454080690.png" alt="1664454080690"><figcaption>1664454080690</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454145911.png" alt="1664454145911"><figcaption>1664454145911</figcaption>
+</figure>
+<h4 id="separate-chaining">Separate Chaining</h4>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454357261.png" alt="1664454357261"><figcaption>1664454357261</figcaption>
+</figure>
+<h5 id="implementation-2">Implementation</h5>
+<ul>
+<li><p>get</p>
+<img data-src="/posts/1e64ea0e/1664454550102.png" alt="1664454550102"></li>
+<li><p>put</p>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454595670.png" alt="1664454595670"><figcaption>1664454595670</figcaption>
+</figure></li>
+</ul>
+<h5 id="analysis">Analysis</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454644486.png" alt="1664454644486"><figcaption>1664454644486</figcaption>
+</figure>
+<h4 id="linear-probing">Linear Probing</h4>
+<ul>
+<li>Hash. Map key to integer <code>i</code> between 0 and M-1.</li>
+<li>Insert. Put at table index <code>i</code> if free; if not try <code>i+1</code>, <code>i+2</code>, etc.</li>
+<li>Search. Search table index <code>i</code>; if occupied but no match, try <code>i+1</code>, <code>i+2</code>, etc.</li>
+<li><em>Note. Array size M <strong>must be</strong> greater than number of key-value pairs N.</em></li>
+</ul>
+<figure>
+<img data-src="/posts/1e64ea0e/1664454726971.png" alt="1664454726971"><figcaption>1664454726971</figcaption>
+</figure>
+<h5 id="impletementation">Impletementation</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455063921.png" alt="1664455063921"><figcaption>1664455063921</figcaption>
+</figure>
+<h5 id="analysis-1">Analysis</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455183290.png" alt="1664455183290"><figcaption>1664455183290</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455211599.png" alt="1664455211599"><figcaption>1664455211599</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455234515.png" alt="1664455234515"><figcaption>1664455234515</figcaption>
+</figure>
+<h5 id="context">Context</h5>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455659998.png" alt="1664455659998"><figcaption>1664455659998</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455708875.png" alt="1664455708875"><figcaption>1664455708875</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455680207.png" alt="1664455680207"><figcaption>1664455680207</figcaption>
+</figure>
+<figure>
+<img data-src="/posts/1e64ea0e/1664455733947.png" alt="1664455733947"><figcaption>1664455733947</figcaption>
+</figure>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>默于
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.aimoyu.tech/posts/1e64ea0e/" title="普林斯顿大学算法第一部分">https://www.aimoyu.tech/posts/1e64ea0e/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/502aa6b7/" rel="prev" title="Git 入门笔记">
+                  <i class="fa fa-chevron-left"></i> Git 入门笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/40163972/" rel="next" title="LaTex 公式笔记">
+                  LaTex 公式笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">默于</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">51k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-100" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.aimoyu.tech/posts/1e64ea0e/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9e7190b00252bdf57bbc3fe8b9dc5927"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

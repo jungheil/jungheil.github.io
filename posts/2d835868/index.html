@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CMerriweather:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/yellow/pace-theme-flat-top.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.aimoyu.tech","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#fc6423","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="四旋翼无人机的动力学与控制可以分为两个部分，一部分是上位机控制无人机的推力F和扭矩M，另一部分是飞控根据推力和扭矩控制四旋翼的电机。本文主要关注前者的动力学与控制。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四旋翼无人机动力学与控制">
+<meta property="og:url" content="https://www.aimoyu.tech/posts/2d835868/index.html">
+<meta property="og:site_name" content="AIMoyu">
+<meta property="og:description" content="四旋翼无人机的动力学与控制可以分为两个部分，一部分是上位机控制无人机的推力F和扭矩M，另一部分是飞控根据推力和扭矩控制四旋翼的电机。本文主要关注前者的动力学与控制。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.aimoyu.tech/posts/2d835868/image-20220719205139467.png">
+<meta property="article:published_time" content="2022-07-07T13:22:26.000Z">
+<meta property="article:modified_time" content="2022-09-29T14:09:05.141Z">
+<meta property="article:author" content="默于">
+<meta property="article:tag" content="无人机">
+<meta property="article:tag" content="控制">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.aimoyu.tech/posts/2d835868/image-20220719205139467.png">
+
+
+<link rel="canonical" href="https://www.aimoyu.tech/posts/2d835868/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.aimoyu.tech/posts/2d835868/","path":"posts/2d835868/","title":"四旋翼无人机动力学与控制"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>四旋翼无人机动力学与控制 | AIMoyu</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">AIMoyu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是菜狗默于的上班摸鱼日常！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E5%8A%A8%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">运动学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">动力学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">线性控制器</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="默于"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">默于</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:jungheilai@gmail.com" title="E-Mail → mailto:jungheilai@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aimoyu.tech/posts/2d835868/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="默于">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AIMoyu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="四旋翼无人机动力学与控制 | AIMoyu">
+      <meta itemprop="description" content="四旋翼无人机的动力学与控制可以分为两个部分，一部分是上位机控制无人机的推力F和扭矩M，另一部分是飞控根据推力和扭矩控制四旋翼的电机。本文主要关注前者的动力学与控制。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          四旋翼无人机动力学与控制
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-07 21:22:26" itemprop="dateCreated datePublished" datetime="2022-07-07T21:22:26+08:00">2022-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-29 22:09:05" itemprop="dateModified" datetime="2022-09-29T22:09:05+08:00">2022-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/" itemprop="url" rel="index"><span itemprop="name">机器人</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">四旋翼无人机的动力学与控制可以分为两个部分，一部分是上位机控制无人机的推力F和扭矩M，另一部分是飞控根据推力和扭矩控制四旋翼的电机。本文主要关注前者的动力学与控制。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>四旋翼无人机的动力学与控制可以分为两个部分，一部分是上位机控制无人机的推力<span class="math inline"> \(F\)</span> 和扭矩<span class="math inline"> \(M\)</span>，另一部分是飞控根据推力和扭矩控制四旋翼的电机。本文主要关注前者的动力学与控制。</p>
+<h3 id="运动学">运动学</h3>
+<p>定义惯性系<span class="math inline"> \(\{\vec{a_1},\vec{a_2},\vec{a_3}\}\)</span> 表示为 {A} 和机体系表<span class="math inline"> \(\{\vec{b_1},\vec{b_2},\vec{b_3}\}\)</span> 示为<span class="math inline"> \(\{B\}\)</span>。<span class="math inline">\(\{B\}\)</span> 在<span class="math inline"> \(\{A\}\)</span> 的表达为：</p>
+<p><span class="math display">\[
+R^A_B=
+\begin{bmatrix}
+𝑐\psi 𝑐\theta −𝑠\phi 𝑠\psi 𝑠\theta &amp; −𝑐\phi 𝑠\psi &amp; 𝑐\psi 𝑠\theta +𝑐\theta 𝑠\phi 𝑠\psi \\
+𝑐\theta 𝑠\psi +𝑐\psi 𝑠\phi 𝑠\theta  &amp; 𝑐\phi 𝑐\psi &amp; 𝑠\psi 𝑠\theta −𝑐\psi 𝑐\theta 𝑠\phi  \\
+−𝑐\phi 𝑠\theta  &amp; 𝑠\phi  &amp; 𝑐\phi 𝑐\theta 
+\end{bmatrix}
+\]</span></p>
+<p>四旋翼的运动学方程如下：</p>
+<p><span class="math display">\[
+\text {欧拉角模型}
+\begin {cases}
+\dot {\mathbf {p}} = \mathbf {v} \\
+\dot {\mathbf {\Theta}} = W \cdot \mathbf {\omega}
+\end {cases} \\
+\text {旋转矩阵模型}
+\begin {cases}
+\dot {\mathbf {p}} = \mathbf {v} \\
+\dot {\mathbf {R}} = \mathbf {R}[\mathbf {\omega}]_\times
+\end {cases}
+\]</span></p>
+<p>其中，<span class="math inline">\(\mathbf{p}\)</span> 表示四旋翼两个时刻质心位置的向量，<span class="math inline">\(\mathbf{v}\)</span> 表示<span class="math inline"> \(\{B\}\)</span> 相对<span class="math inline"> \(\{A\}\)</span> 的线速度在坐标系<span class="math inline"> \(\{A\}\)</span> 中的表达。</p>
+<p><span class="math inline">\(\dot{\mathbf{\Theta}}\)</span> 表示姿态变化率（并无具体对应坐标系，或者说不同轴对应坐标系不同），<span class="math inline">\(\mathbf{\omega}\)</span> 是坐标系<span class="math inline"> \(\{B\}\)</span> 下的机体旋转角速度。</p>
+<p><span class="math display">\[
+\mathbf{\Theta} = 
+\begin{bmatrix}
+\phi &amp; \theta &amp; \psi 
+\end{bmatrix}^T
+\]</span></p>
+<p>姿态变化率<span class="math inline"> \(\dot{\mathbf{\Theta}}\)</span> 与机体角速度<span class="math inline"> \(\mathbf{\omega}\)</span> 并不相等，其转换关系取决于欧拉角类型，以 ZXY 为例：</p>
+<p><span class="math display">\[
+\begin{cases}
+\dot{\phi} = R_Y(\theta) \cdot \mathbf{\omega}_x \vec{b_1} \\
+\dot{\theta}=\mathbf{\omega}_y \vec{b_2} \\
+\dot{\psi} = R_X(\phi)R_Y(\theta) \cdot \mathbf{\omega}_z \vec{b_3}
+\end{cases}
+\]</span></p>
+<p>推得</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\mathbf{\omega}_x \\ \mathbf{\omega}_y \\ \mathbf{\omega}_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+c\theta &amp; 0 &amp; -c\phi s\theta \\
+0 &amp; 1 &amp; s\phi \\
+s\theta &amp; 0 &amp; c\phi c\theta
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\phi} \\ \dot{\theta} \\ \dot{\psi}
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+W=
+\begin{bmatrix}
+c\theta &amp; 0 &amp; s\theta \\
+t\phi s\theta &amp; 1 &amp; -t\phi c\theta \\
+-s\theta / c\phi &amp; 0 &amp; c\theta/c\phi
+\end{bmatrix}
+\]</span></p>
+<p>注意<span class="math inline"> \(W\)</span> 并非旋转矩阵，不是齐次矩阵。</p>
+<h3 id="动力学">动力学</h3>
+<p>通过牛顿 - 欧拉方程建立动力学模型。由牛顿 - 欧拉方程可知，刚体运动 = 质心的平动 + 绕质心的转动。</p>
+<p><span class="math display">\[
+m\ddot {\mathbf {p}}=-m\cdot g\vec {a_3}+R^A_B\cdot f\vec {b_3}\quad
+\text {牛顿方程}\\
+ I\mathbf {\dot {\omega}}+\mathbf {\omega}\times I\mathbf {\omega}=G_a+\tau\quad
+\text {欧拉方程}
+\]</span></p>
+<p>其中，<span class="math inline">\(f\)</span> 和<span class="math inline"> \(\tau\)</span> 分别为四旋翼产生的推力和力矩，<span class="math inline">\(G_a\)</span> 表示陀螺力矩。</p>
+<p><strong>陀螺力矩</strong>：当电机高速旋转的时候，相当于一个陀螺。高速旋转的陀螺是非常稳定的个体，具有保持自身轴向不变的能力。因此如果有外力想改变陀螺转轴的方向，那么会产生一个陀螺力矩来抵抗这种改变。</p>
+<p>单个螺旋桨的陀螺力矩可以表示为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+G_{a,k} &amp; = J_{RP}(-1)^k\varpi_k\vec{b_3}\times\omega \\
+&amp; = J_{RP}(\omega\times\vec{b_3})(-1)^{k+1}\varpi_k
+\end{aligned}
+\]</span></p>
+<p>其中，<span class="math inline">\(k\)</span> 为电机序号，<span class="math inline">\(J_{PR}\)</span> 为转子加旋翼的转动惯量，<span class="math inline">\(\varpi\)</span> 为电机角速度。由于：</p>
+<p><span class="math display">\[
+\omega\times\vec{b_3}=
+\begin{bmatrix}
+\omega_y &amp; -\omega_x &amp; 0
+\end{bmatrix}^T
+\]</span></p>
+<p>所以：</p>
+<p><span class="math display">\[
+G_{a}=
+\begin{bmatrix}
+-J_{PR}\omega_y\varpi_{sum} \\
+J_{PR}\omega_x \varpi_{sum}\\
+0
+\end{bmatrix}\\
+\varpi_{sum} = -\varpi_1+\varpi_2-\varpi_3+\varpi_4
+\]</span></p>
+<p>将无人机视为均匀对称的刚体，可以认为转动惯量：</p>
+<p><span class="math display">\[
+I=\begin{bmatrix}
+I_x&amp;&amp;\\
+&amp;I_y&amp;\\
+&amp;&amp;I_z
+\end{bmatrix}
+\]</span></p>
+<p>稍作整理：</p>
+<p><span class="math display">\[
+\ddot{\mathbf{p}}=
+\begin{bmatrix}
+\ddot{x} \\
+\ddot{y} \\
+\ddot{z}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{f}{m}(s\theta c\psi+s\phi c\theta s\psi) \\
+\frac{f}{m}(s\theta s\psi-s\phi c\theta c\psi) \\
+\frac{f}{m}c\phi c\theta-g
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\dot{\omega}=
+\begin{bmatrix}
+\dot{\omega_x}\\\dot{\omega_y}\\\dot{\omega_z}
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{1}{I_x}[\omega_y\omega_z(I_y-I_z)-J_{RP}\omega_y\varpi_{sum}+\tau_x] \\
+\frac{1}{I_y}[\omega_x\omega_z(I_z-I_x)+J_{RP}\omega_x\varpi_{sum}+\tau_y] \\
+\frac{1}{I_z}[\omega_x\omega_y(I_x-I_y)+\tau_z]
+\end{bmatrix}
+\]</span></p>
+<h3 id="线性控制器">线性控制器</h3>
+<p>首先进行线性化，假设无人机处于悬停状态，则<span class="math inline"> \(\phi\)</span> 和<span class="math inline"> \(\theta\)</span> 趋于 0，<span class="math inline">\(\frac{f}{m}\)</span> 趋于<span class="math inline"> \(g\)</span>。</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\ddot{x} \\
+\ddot{y} \\
+\ddot{z}
+\end{bmatrix}
+=
+\begin{bmatrix}
+g(\theta c\psi+\phi s\psi) \\
+g(s\theta \psi-\phi c\psi) \\
+\frac{f}{m}-g
+\end{bmatrix}
+\]</span></p>
+<figure>
+<img data-src="/posts/2d835868/image-20220719205139467.png" alt="image-20220719205139467"><figcaption>image-20220719205139467</figcaption>
+</figure>
+<p><strong>PID</strong>:</p>
+<p><span class="math display">\[
+\ddot{z_c}=\ddot{z_{des}}+K_{d,z}(z_{des}-z)+K_{d,z}(\dot{z_{des}}-\dot{z})
+\]</span></p>
+<p>前馈加 PD</p>
+<p><strong>模型</strong>：</p>
+<p><span class="math display">\[
+f=m(g+\ddot{z_c}) \\
+\phi_c=\frac{1}{g}(\ddot{x}s\psi-\ddot{y}c\psi) \\
+\theta_c=\frac{1}{g}(\ddot{x}c\psi+\ddot{y}s\psi)
+\]</span></p>
+<p>值得注意的是，<span class="math inline">\(\psi\)</span> 单独进行控制。</p>
+<p><strong>PID</strong>：</p>
+<p><span class="math display">\[
+\dot{\omega}_{x,c}=K_{d,\phi}(\phi_{c}-\phi)+K_{d,\phi}(\omega_{x,c}-\omega_x) \\
+\dot{\omega}_{y,c}=K_{d,\theta}(\theta_{c}-\theta)+K_{d,\theta}(\omega_{y,c}-\omega_y) \\
+\dot{\omega}_{z,c}=K_{d,\psi}(\psi_{c}-\psi)+K_{d,\psi}(\omega_{z,c}-\omega_z)
+\]</span></p>
+<p><strong>模型</strong>：</p>
+<p><span class="math display">\[
+\tau =  I\mathbf{\dot{\omega}_c}+\mathbf{\omega}\times I\mathbf{\omega}
+\]</span></p>
+<p>注意此处忽略陀螺力矩。</p>
+<p><strong>代码</strong>：</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[F, M]</span> = <span class="title">controller</span><span class="params">(t, s, s_des)</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> params</span><br><span class="line"></span><br><span class="line">    m = params.mass;</span><br><span class="line">    g = params.grav;</span><br><span class="line">    I = params.I;</span><br><span class="line"></span><br><span class="line">    x_des = s_des(<span class="number">1</span>);</span><br><span class="line">    y_des = s_des(<span class="number">2</span>);</span><br><span class="line">    z_des = s_des(<span class="number">3</span>);</span><br><span class="line">    dx_des = s_des(<span class="number">4</span>);</span><br><span class="line">    dy_des = s_des(<span class="number">5</span>);</span><br><span class="line">    dz_des = s_des(<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line">    qua_des = s_des(<span class="number">7</span>:<span class="number">10</span>);</span><br><span class="line">    [row_des, pic_des, yaw_des] = RotToRPY_ZXY(quaternion_to_R(qua_des));</span><br><span class="line"></span><br><span class="line">    drow_des = s_des(<span class="number">11</span>);</span><br><span class="line">    dpic_des = s_des(<span class="number">12</span>);</span><br><span class="line">    dyaw_des = s_des(<span class="number">13</span>);</span><br><span class="line"></span><br><span class="line">    ddx_des = <span class="number">0</span>;</span><br><span class="line">    ddy_des = <span class="number">0</span>;</span><br><span class="line">    ddz_des = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    x = s(<span class="number">1</span>);</span><br><span class="line">    y = s(<span class="number">2</span>);</span><br><span class="line">    z = s(<span class="number">3</span>);</span><br><span class="line">    dx = s(<span class="number">4</span>);</span><br><span class="line">    dy = s(<span class="number">5</span>);</span><br><span class="line">    dz = s(<span class="number">6</span>);</span><br><span class="line">    qua = s(<span class="number">7</span>:<span class="number">10</span>);</span><br><span class="line">    [row, pic, yaw] = RotToRPY_ZXY(quaternion_to_R(qua));</span><br><span class="line">    drow = s(<span class="number">11</span>);</span><br><span class="line">    dpic = s(<span class="number">12</span>);</span><br><span class="line">    dyaw = s(<span class="number">13</span>);</span><br><span class="line"></span><br><span class="line">    K_ddx_p = <span class="number">25</span>;</span><br><span class="line">    K_ddx_d = <span class="number">12</span>;</span><br><span class="line">    K_ddy_p = <span class="number">25</span>;</span><br><span class="line">    K_ddy_d = <span class="number">12</span>;</span><br><span class="line">    K_ddz_p = <span class="number">70</span>;</span><br><span class="line">    K_ddz_d = <span class="number">20</span>;</span><br><span class="line">    K_ddrow_p = <span class="number">400</span>;</span><br><span class="line">    K_ddrow_d = <span class="number">30</span>;</span><br><span class="line">    K_ddpic_p = <span class="number">400</span>;</span><br><span class="line">    K_ddpic_d = <span class="number">30</span>;</span><br><span class="line">    K_ddyaw_p = <span class="number">300</span>;</span><br><span class="line">    K_ddyaw_d = <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line">    R_ab = [<span class="built_in">cos</span>(pic), <span class="number">0</span>, -<span class="built_in">cos</span>(row) * <span class="built_in">sin</span>(pic); <span class="number">0</span>, <span class="number">1</span>, <span class="built_in">sin</span>(row); <span class="built_in">sin</span>(pic), <span class="number">0</span>, <span class="built_in">cos</span>(row) * <span class="built_in">cos</span>(pic)];</span><br><span class="line">    w_xyz = R_ab * [row; pic; yaw];</span><br><span class="line">    w_x = w_xyz(<span class="number">1</span>);</span><br><span class="line">    w_y = w_xyz(<span class="number">2</span>);</span><br><span class="line">    w_z = w_xyz(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    ddx = ddx_des + K_ddx_p * (x_des - x) + K_ddx_d * (dx_des - dx);</span><br><span class="line">    ddy = ddy_des + K_ddy_p * (y_des - y) + K_ddy_d * (dy_des - dy);</span><br><span class="line">    ddz = ddz_des + K_ddz_p * (z_des - z) + K_ddz_d * (dz_des - dz);</span><br><span class="line"></span><br><span class="line">    row_c = (ddx * <span class="built_in">sin</span>(yaw) - ddy * <span class="built_in">cos</span>(yaw)) / g;</span><br><span class="line">    pic_c = (ddx * <span class="built_in">cos</span>(yaw) + ddy * <span class="built_in">sin</span>(yaw)) / g;</span><br><span class="line">    yaw_c = yaw_des;</span><br><span class="line"></span><br><span class="line">    drow_c = <span class="number">0</span>;</span><br><span class="line">    dpic_c = <span class="number">0</span>;</span><br><span class="line">    dyaw_c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (((yaw_c - yaw) &gt;- <span class="built_in">pi</span>) &amp;&amp; ((yaw_c - yaw) &lt; <span class="built_in">pi</span>))</span><br><span class="line">        d_yaw_c = yaw_c - yaw;</span><br><span class="line">    <span class="keyword">elseif</span> ((yaw_c - yaw) &lt;= -<span class="built_in">pi</span>)</span><br><span class="line">        d_yaw_c = yaw_c - yaw + <span class="number">2</span> * <span class="built_in">pi</span>;</span><br><span class="line">    <span class="keyword">elseif</span> ((yaw_c - yaw) &gt;= <span class="built_in">pi</span>)</span><br><span class="line">        d_yaw_c = yaw_c - yaw - <span class="number">2</span> * <span class="built_in">pi</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    ddrow = K_ddrow_p * (row_c - row) + K_ddrow_d * (drow_c - drow);</span><br><span class="line">    ddpic = K_ddpic_p * (pic_c - pic) + K_ddpic_d * (dpic_c - dpic);</span><br><span class="line">    ddyaw = K_ddyaw_p * (d_yaw_c) + K_ddyaw_d * (dyaw_c - dyaw);</span><br><span class="line"></span><br><span class="line">    F = m * (g + ddz);</span><br><span class="line">    M = I * [ddrow; ddpic; ddyaw] + <span class="built_in">cross</span>([w_x; w_y; w_z], I * [w_x; w_y; w_z]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">% F = 1.0; M = [0.0, 0.0, 0.0]'; % You should calculate the output F and M</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>默于
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.aimoyu.tech/posts/2d835868/" title="四旋翼无人机动力学与控制">https://www.aimoyu.tech/posts/2d835868/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag"><i class="fa fa-tag"></i> 无人机</a>
+              <a href="/tags/%E6%8E%A7%E5%88%B6/" rel="tag"><i class="fa fa-tag"></i> 控制</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/7d3925ab/" rel="prev" title="正则表达式笔记">
+                  <i class="fa fa-chevron-left"></i> 正则表达式笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">默于</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">51k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-100" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.aimoyu.tech/posts/2d835868/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"jungheil","repo":"jungheil.github.io","client_id":"d95f864796665a96f9e9","client_secret":"2acb1884d90fa4e98746df996f7c236f93ffe6c7","admin_user":"jungheil","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"484183f5a13d0425a6000961325622b5"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
