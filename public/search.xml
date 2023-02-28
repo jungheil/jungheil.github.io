@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>VPS 线路 2022 及常用工具</title>
+      <link href="/posts/aeb1b802/"/>
+      <url>/posts/aeb1b802/</url>
+      
+        <content type="html"><![CDATA[<p>目前国内有三大 ISP，电信、联通、移动，电信有 2 大骨干网 ——163 和 CN2，联通有 2 大骨干网 ——169 和 A 网，移动只有 1 个骨干网 CMNET，一共有 5 大骨干网，这些骨干网都有自己的独立国际出口，和国外 ISP 有直接 Peer 或 Transit。CMNET 并没有和国外 ISP 有直接的互联，而是借助其境外骨干网 CMI 进行互联的。</p><p>另外有用于科研和教育用途的 2 个小型骨干网，CERNET（教育网，主用于高校）和 CSTNET（科技网），这 2 个骨干网也有自己的独立国际出口。</p><h3 id="电信">电信</h3><ul><li><p>163 骨干网 (AS4134)</p><p>宽带业务范围：普通家用宽带、商用宽带、政企宽带</p><p>海外加速的专有业务：163 精品网套餐（上海地区）</p><p>已知出口：北京、上海、广州</p><p>IP：<code>202.97</code> 开头</p><p>全国规模最大的骨干网，享有最大的国际出口，如果读者办理的是一般性的电信宽带又或者是商宽，访问境外网站，如果对方 ISP 没有购买电信的 CN2 Transit，那么就走这个骨干网。</p></li><li><p>CN2 (AS4809)</p><p>宽带业务范围：家用游戏及海外加速宽带、商用跨国优化宽带、政企宽带</p><p>海外加速的专有业务：CN2 国际精品网套餐（覆盖几乎全国）</p><p>已知出口：北京、上海、广州、乌鲁木齐</p><p>IP：<code>59.43</code> 开头</p><p>技术先进，一般到一个 ISP 有不止一个 Policy 可以到达，灵活性非常高，因此可以提供稳定快速的国际互联服务，一般对海外聊天、游戏有较高需求的都会使用该网。</p><p>分为 <code>CN2 GT</code> 和 <code>CN2 GIA</code>。<code>CN2 GT</code> 为中端产品，本身接入网络 163, 省级骨干走 163 (去程和回程都会出现 202.97 节点), 出口才走 CN2；<code>CN2 GIA</code> 为高端线路，本身接入网络 CN2，出口也是 CN2。部分未部署 CN2 的省份城市，会经 163 然后接入 CN2 节点。</p></li></ul><h3 id="联通">联通</h3><ul><li><p>169 网、CU VIP (AS4837)</p><p>宽带业务范围：家宽、商宽、政企宽带</p><p>海外加速业务：尚不明确，或当前未推出</p><p>已知出口：北京、上海、广州</p><p>IP：<code>219.158</code> 开头</p><p>如果是联通用户，除非访问的对方 ISP 购买了 CN2 Transit 或联通的 9929 Transit，否则一律走 169 骨干网。该网目前出国拥堵程度小于电信 163，但是总体速度和延时可靠性不如 CN2。</p></li><li><p>A 网、CU PM (AS9929)</p><p>宽带业务范围：商业宽带、政企宽带</p><p>海外加速服务：本网专做海外加速服务</p><p>已知出口：北京、上海、广州</p><p>IP：<code>218.105</code>、<code>210.51</code></p><p>本网前身为网通的骨干网，后与联通合并后改为联通 A 网，联通将该骨干网用于国际互联加速服务，价格昂贵，主要是跨国企业在使用，该网无家宽业务。</p></li><li><p>CUG (AS10099)</p><p>联通出国可能是 AS4837 直接出国，或内地 AS4837/AS9929，出境接入 AS10099。</p></li></ul><h3 id="移动">移动</h3><ul><li><p>China Mobile (AS9808)</p><p>宽带业务范围：家宽、商宽、政企宽带</p><p>海外加速业务：尚不明确，或为高 Qos 商宽 / 机房宽带</p><p>AS9808 为移动境内的骨干网，未设与国际 ISP Peer，故所有出境流量通过 AS58453（CMI）与外网互联。</p></li><li><p>CMI (AS58453)</p><p>已知出口：北京、上海、广州</p><p>IP：<code>223.120</code> 开头</p><p>是移动的国际段骨干网，最早只在香港建网，并接入 HKIX，后逐渐扩大至全球。</p></li></ul><h3 id="其他">其他</h3><ul><li><p>CERNET 教育网 (AS4538)</p><p>宽带业务范围：各大高校的校园网和部分大型国内云服务提供商</p><p>已知出口：北京清华大学</p></li><li><p> CSTNET 科技网 (AS7497)</p></li></ul><h3 id="测试工具">测试工具</h3><ul><li><p>Ping</p><figure class="highlight avrasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">https:</span>//<span class="built_in">ping</span>.pe/</span><br></pre></td></tr></tbody></table></figure></li><li><p>TCPing</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.itdog.cn<span class="regexp">/tcping/</span></span><br></pre></td></tr></tbody></table></figure></li><li><p>测速</p><p>SuperSpedd.sh</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">bash &lt;(curl -Lso- https:<span class="regexp">//gi</span>t.io/superspeed_uxh)</span><br></pre></td></tr></tbody></table></figure><p>Speedtest-cli</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install curl</span><br><span class="line">curl -s https:<span class="regexp">//i</span>nstall.speedtest.net<span class="regexp">/app/</span>cli/install.deb.sh | sudo bash</span><br><span class="line">sudo apt-get install speedtest</span><br></pre></td></tr></tbody></table></figure><p>iperf3</p></li><li><p> 路由</p><p>去程路由</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>www.itdog.cn<span class="regexp">/tracert/</span></span><br><span class="line">https:<span class="regexp">//</span>tools.ipip.net/traceroute.php</span><br></pre></td></tr></tbody></table></figure><p>回程路由</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/zhucaidan/m</span>tr_trace<span class="regexp">/main/m</span>tr_trace.sh|bash</span><br></pre></td></tr></tbody></table></figure><p>testrace.sh</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/PhilCity/</span>testrace<span class="regexp">/master/</span>testrace.sh</span><br><span class="line">bash testrace.sh</span><br></pre></td></tr></tbody></table></figure><p>besttrace</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.ipip.net<span class="regexp">/17mon/</span>besttrace4linux.zip</span><br><span class="line"></span><br><span class="line">apt install zip</span><br><span class="line"></span><br><span class="line">unzip besttrace4linux.zip</span><br><span class="line"></span><br><span class="line">chmod +x besttrace</span><br><span class="line"></span><br><span class="line">./besttrace -q1 -g cn  <span class="number">8.8</span>.<span class="number">8.8</span></span><br></pre></td></tr></tbody></table></figure></li><li><p>DNS 泄漏</p><p>检查是否有国内 DNS 提供商，全局与绕过大陆规则 DNS 提供商是否一致</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//i</span>pleak.net/</span><br></pre></td></tr></tbody></table></figure><p>浏览器 WebRTC 是否泄漏</p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>browserleaks.com/</span><br></pre></td></tr></tbody></table></figure></li></ul><h3 id="参考">参考</h3><p><a href="https://zhuanlan.zhihu.com/p/451683996" class="uri">https://zhuanlan.zhihu.com/p/451683996</a></p><p><a href="https://blog.laoda.de/archives/vps-speedtest" class="uri">https://blog.laoda.de/archives/vps-speedtest</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 七国 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VPS </tag>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>四旋翼无人机动力学与控制</title>
       <link href="/posts/2d835868/"/>
       <url>/posts/2d835868/</url>
@@ -23,6 +50,33 @@
             <tag> 无人机 </tag>
             
             <tag> 控制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>双系统共享蓝牙配对</title>
+      <link href="/posts/cc3a925/"/>
+      <url>/posts/cc3a925/</url>
+      
+        <content type="html"><![CDATA[<h3 id="linux生成配置模板">linux 生成配置模板</h3><p>进入 linux 系统连接蓝牙设备，配置生成在路径 <code>/var/lib/bluetooth/XXX/YYY/info</code> 其中 <code>XXX</code> 和 <code>YYY</code> 分别为主机和蓝牙设备的 mac 地址。</p><h3 id="windows配对">windows 配对</h3><ul><li><p>配对蓝牙设备</p></li><li><p>下载 <code>PSEXEC.exe</code></p><p>地址：<a href="https://technet.microsoft.com/en-us/sysinternals/bb897553" class="uri">https://technet.microsoft.com/en-us/sysinternals/bb897553</a></p><p>提取 <code>PsExec64.exe</code> 到 <code>c:/windows/system32</code></p><p>终端中输入 <code>psexec64.exe -si regedit</code> 打开注册表编辑器</p></li><li><p>进入蓝牙设置：</p><p>搜索路径：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\BTHPORT\Parameters\Keys\</code></p><p>找到对应的蓝牙设备，对该文件夹右键可导出配置为 txt 文件</p></li></ul><h3 id="修改linux配置">修改 linux 配置</h3><table><thead><tr class="header"><th>win</th><th>linux</th><th>format</th></tr></thead><tbody><tr class="odd"><td><code>IRK</code></td><td><code>[IdentityResolvingKey]-Key</code></td><td>转大写，去空格和短线</td></tr><tr class="even"><td><code>CSRK</code></td><td><code>[LocalSignatureKey]-Key</code></td><td>转大写，去空格和短线</td></tr><tr class="odd"><td><code>LTK</code></td><td><code>[LongTermKey]-Key</code></td><td>转大写，去空格和短线</td></tr><tr class="even"><td><code>EDIV</code></td><td><code>[LongTermKey]-EDiv</code></td><td>转 10 进制</td></tr><tr class="odd"><td><code>ERand</code></td><td><code>[LongTermKey]-Rand</code></td><td>转 10 进制</td></tr><tr class="even"><td></td><td><code>[SlaveLongTermKey]</code></td><td>不要动</td></tr><tr class="odd"><td><code>LSK</code></td><td></td><td>不明</td></tr></tbody></table><ul><li><p>修改完 linux 配置文件后放回 <code>/var/lib/bluetooth/XXX</code> 中，记得修改文件名 <code>YYY</code> 为新的 mac 地址</p></li><li><p>刷新配置 <code>systemctl restart bluetooth</code></p></li><li><p>登录自动连接设置：修改 <code>/etc/bluetooth/main.conf</code> 中的 <code>AutoEnable</code> 为 <code>true</code></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 七国 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> 蓝牙 </tag>
             
         </tags>
       
